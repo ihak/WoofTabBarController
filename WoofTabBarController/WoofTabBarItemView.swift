@@ -24,29 +24,6 @@ class WoofTabBarItemView: UIView {
         label.font = UIFont(name: "Avenir-Next", size: 13.0)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            image.widthAnchor.constraint(equalToConstant: 20.0),
-            image.heightAnchor.constraint(equalToConstant: 20.0),
-        ])
-        
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.alignment = .fill
-        stackView.spacing   = 4.0
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.addArrangedSubview(image)
-        stackView.addArrangedSubview(label)
-
-        self.addSubview(stackView)
-
-        NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
-        ])
 
         self.backgroundColor = .random
     }
