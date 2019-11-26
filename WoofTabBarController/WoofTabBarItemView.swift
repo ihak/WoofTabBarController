@@ -10,7 +10,9 @@ import UIKit
 
 class WoofTabBarItemView: UIView {
 
-    var item: WoofTabBarItem?
+    var item: WoofTabBarItem!
+    var imageContainer: UIView!
+    
     override func draw(_ rect: CGRect) {
         backgroundColor = .random
         
@@ -25,13 +27,24 @@ class WoofTabBarItemView: UIView {
             containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
         
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 5.0
-                
-        let imageContainer = UIView()
+        // contains icon image and notification bubble view
+        // receives touches and animates
+        imageContainer = UIView()
+        imageContainer.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(imageContainer)
+        NSLayoutConstraint.activate([
+            imageContainer.heightAnchor.constraint(equalToConstant: 60.0),
+            imageContainer.widthAnchor.constraint(equalToConstant: 60),
+            imageContainer.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            imageContainer.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
+        ])
+        
+        imageContainer.layer.cornerRadius = 30.0
+        imageContainer.clipsToBounds = true
+        imageContainer.backgroundColor = .random
+        
+        // Add tap gesture to imageContainer view
+        addTapGesture(view: imageContainer)
         
         let image = UIImageView(image: UIImage(named: "home"))
         image.contentMode = .scaleAspectFit
@@ -42,10 +55,10 @@ class WoofTabBarItemView: UIView {
         imageContainer.addSubview(image)
         
         NSLayoutConstraint.activate([
-            image.topAnchor.constraint(equalTo: imageContainer.topAnchor),
-            image.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor),
-            image.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor),
-            image.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor)
+            image.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 15.0),
+            image.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: -15.0),
+            image.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor, constant: 15.0),
+            image.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: -15.0)
         ])
         
         let notificationBubbleContainer = UIView()
@@ -57,8 +70,8 @@ class WoofTabBarItemView: UIView {
         NSLayoutConstraint.activate([
             notificationBubbleContainer.heightAnchor.constraint(equalToConstant: 25.0),
             notificationBubbleContainer.widthAnchor.constraint(equalToConstant: 25.0),
-            notificationBubbleContainer.topAnchor.constraint(equalTo: imageContainer.topAnchor),
-            notificationBubbleContainer.leadingAnchor.constraint(equalTo: image.trailingAnchor)
+            notificationBubbleContainer.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 10.0),
+            notificationBubbleContainer.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: -15.0)
         ])
         
         
@@ -76,30 +89,30 @@ class WoofTabBarItemView: UIView {
             notificationBubbleLabel.leadingAnchor.constraint(equalTo: notificationBubbleContainer.leadingAnchor, constant: 3.0),
             notificationBubbleLabel.trailingAnchor.constraint(equalTo: notificationBubbleContainer.trailingAnchor, constant: -3.0)
         ])
-        
-        let label = UILabel()
-        label.text = "title"
-        label.font = UIFont(name: "Avenir-Next", size: 13.0)
-        label.textAlignment = .center
-        label.textColor = .black
-        label.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
-        label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
-
-        stackView.addArrangedSubview(imageContainer)
-        stackView.addArrangedSubview(label)
-        
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.addSubview(stackView)
-        
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10.0),
-            stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -10.0),
-            stackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
-        ])
     }
     
     override var intrinsicContentSize: CGSize {
-        CGSize(width: 50.0, height: 44.0)
+        CGSize(width: 50.0, height: 70.0)
+    }
+    
+    private func addTapGesture(view: UIView) {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    private func animateContainer() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.imageContainer.transform = CGAffineTransform(translationX: 0.0, y: -25.0)
+        }) { (_) in
+            UIView.animate(withDuration: 0.2) {
+                self.imageContainer.transform = CGAffineTransform(translationX: 0.0, y: -20.0)
+            }
+        }
+    }
+    
+    @objc private func handleTap() {
+        print("Tapped")
+        animateContainer()
     }
 }
+

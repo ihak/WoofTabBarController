@@ -61,7 +61,6 @@ class WoofTabBarController: UIViewController {
         stackview.addArrangedSubview(WoofTabBarItemView())
         stackview.addArrangedSubview(WoofTabBarItemView())
         stackview.addArrangedSubview(WoofTabBarItemView())
-        stackview.addArrangedSubview(WoofTabBarItemView())
 
         stackview.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(stackview)
