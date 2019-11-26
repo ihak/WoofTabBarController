@@ -13,6 +13,8 @@ class WoofTabBarItemView: UIView {
     var item: WoofTabBarItem!
     var imageContainer: UIView!
     
+    var delegate: WoofTabBarItemViewDelegate?
+    
     override func draw(_ rect: CGRect) {
         backgroundColor = .random
         
@@ -89,8 +91,12 @@ class WoofTabBarItemView: UIView {
             notificationBubbleLabel.leadingAnchor.constraint(equalTo: notificationBubbleContainer.leadingAnchor, constant: 3.0),
             notificationBubbleLabel.trailingAnchor.constraint(equalTo: notificationBubbleContainer.trailingAnchor, constant: -3.0)
         ])
+        
+        if delegate?.isDefaultItem(itemView: self) == true {
+            self.select(animated: false)
+        }
     }
-    
+
     override var intrinsicContentSize: CGSize {
         CGSize(width: 50.0, height: 70.0)
     }
@@ -100,19 +106,83 @@ class WoofTabBarItemView: UIView {
         view.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    private func animateContainer() {
-        UIView.animate(withDuration: 0.2, animations: {
+    private func animateContainerUp(duration: Double = 0.2) {
+        UIView.animate(withDuration: duration, animations: {
             self.imageContainer.transform = CGAffineTransform(translationX: 0.0, y: -25.0)
         }) { (_) in
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: duration, animations: {
                 self.imageContainer.transform = CGAffineTransform(translationX: 0.0, y: -20.0)
+            }) { (_) in
+                self.delegate?.didAnimate(itemView: self)
             }
         }
     }
     
+    private func animateContainerBack(duration: Double = 0.2) {
+        UIView.animate(withDuration: duration, animations: {
+            self.imageContainer.transform = CGAffineTransform.identity
+        }, completion: nil)
+    }
+    
     @objc private func handleTap() {
-        print("Tapped")
-        animateContainer()
+        guard let delegate = self.delegate else {
+            animateContainerUp()
+            return
+        }
+        
+        if delegate.shouldTap(itemView: self) {
+            if delegate.shouldAnimate(itemView: self) {
+                animateContainerUp()
+            }
+            else {
+                animateContainerUp(duration: 0.0)
+            }
+            
+            delegate.didTap(itemView: self)
+        }
+    }
+    
+    func unSelect(animated: Bool = true) {
+        if animated == false {
+            animateContainerBack(duration: 0.0)
+        }
+        else {
+            animateContainerBack()
+        }
+    }
+    
+    func select(animated: Bool = true) {
+        if animated == false {
+            animateContainerUp(duration: 0.0)
+        }
+        else {
+            animateContainerUp()
+        }
     }
 }
 
+protocol WoofTabBarItemViewDelegate {
+    func isDefaultItem(itemView: WoofTabBarItemView) -> Bool
+    func didTap(itemView: WoofTabBarItemView)
+    func shouldTap(itemView: WoofTabBarItemView) -> Bool
+    func shouldAnimate(itemView: WoofTabBarItemView) -> Bool
+    func didAnimate(itemView: WoofTabBarItemView)
+}
+
+extension WoofTabBarItemViewDelegate {
+    func didTap(itemView: WoofTabBarItemView) {
+        
+    }
+    
+    func shouldTap(itemView: WoofTabBarItemView) -> Bool {
+        return true
+    }
+    
+    func shouldAnimate(itemView: WoofTabBarItemView) -> Bool {
+        return true
+    }
+    
+    func didAnimate(itemView: WoofTabBarItemView) {
+        
+    }
+}
