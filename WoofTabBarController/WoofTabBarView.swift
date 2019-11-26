@@ -10,13 +10,33 @@ import UIKit
 
 class WoofTabBarView: UIView {
 
-    var items = [WoofTabBarItem]()
+    var barItems = [
+        WoofTabBarItem(title: "Hello", image: "home"),
+        WoofTabBarItem(title: "Hello", image: "home"),
+        WoofTabBarItem(title: "Hello", image: "home")
+    ]
     
     override func draw(_ rect: CGRect) {
         // Drawing code
+        super.draw(rect)
         
+        let stackView = UIStackView()
+        stackView.distribution = .fillEqually
+        stackView.axis = .horizontal
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(stackView)
+        
+        stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        
+        for item in barItems {
+            let barItemView = WoofTabBarItemView()
+            stackView.addArrangedSubview(barItemView)
+        }
     }
-
 }
 
 
