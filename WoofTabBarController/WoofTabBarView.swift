@@ -17,7 +17,7 @@ class WoofTabBarView: UIView {
     ]
     
     let stackView = UIStackView()
-    var defaultSelectedIndex = 1
+    var defaultSelectedIndex = 0
     
     var selectedIndex = -1 {
         didSet {
@@ -76,6 +76,7 @@ extension WoofTabBarView: WoofTabBarItemViewDelegate {
             guard defaultItem == itemView else {
                 return false
             }
+            self.selectedIndex = defaultSelectedIndex
             return true
         }
         return false
