@@ -13,9 +13,12 @@ class WoofTabBarView: UIView {
     var barItems = [
         WoofTabBarItem(title: "Hello", image: "home"),
         WoofTabBarItem(title: "World", image: "home"),
+        WoofTabBarItem(title: "You", image: "home"),
+        WoofTabBarItem(title: "You", image: "home"),
         WoofTabBarItem(title: "You", image: "home")
     ]
     
+    let bezierView = BezierView()
     let stackView = UIStackView()
     var defaultSelectedIndex = 0
     
@@ -50,7 +53,21 @@ class WoofTabBarView: UIView {
         stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true        
+        stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        
+        bezierView.translatesAutoresizingMaskIntoConstraints = false
+        self.insertSubview(bezierView, belowSubview: stackView)
+        
+        NSLayoutConstraint.activate([
+            bezierView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            bezierView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            bezierView.topAnchor.constraint(equalTo: self.topAnchor),
+            bezierView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+        
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
+        bezierView.addShapeLayer()
     }
     
     override var intrinsicContentSize: CGSize {
@@ -68,6 +85,10 @@ class WoofTabBarView: UIView {
             item.select(animated: animated)
         }
     }
+    
+    private func changeCurveShape(position: CGPoint) {
+        bezierView.moveCurve(to: position.x)
+    }
 }
 
 extension WoofTabBarView: WoofTabBarItemViewDelegate {
@@ -76,6 +97,7 @@ extension WoofTabBarView: WoofTabBarItemViewDelegate {
             guard defaultItem == itemView else {
                 return false
             }
+            self.changeCurveShape(position: itemView.center)
             self.selectedIndex = defaultSelectedIndex
             return true
         }
@@ -87,7 +109,7 @@ extension WoofTabBarView: WoofTabBarItemViewDelegate {
             guard index != selectedIndex else {
                 return
             }
-            
+            self.changeCurveShape(position: itemView.center)
             self.selectedIndex = index
             print("selected index", selectedIndex)
         }

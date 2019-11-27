@@ -11,7 +11,7 @@ import UIKit
 class BezierView: UIView {
     
     private let shapeLayer = CAShapeLayer()
-    var initialPosition: CGFloat = 70
+    private var initialPosition: CGFloat = 70
 
     func addShapeLayer() {
         shapeLayer.path = curveShapePath(postion: initialPosition)
@@ -52,6 +52,11 @@ class BezierView: UIView {
         animation.isRemovedOnCompletion = false
         animation.delegate = self
         self.shapeLayer.add(animation, forKey: "path")
+    }
+    
+    func moveCurve(to position: CGFloat) {
+        self.initialPosition = position
+        self.animateShape(position: position)
     }
 }
 

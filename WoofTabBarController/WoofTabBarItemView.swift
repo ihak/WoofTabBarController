@@ -19,7 +19,7 @@ class WoofTabBarItemView: UIView {
         backgroundColor = .random
         
         let containerView = UIView()
-        containerView.backgroundColor = .orange
+        containerView.backgroundColor = .clear
         containerView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(containerView)
         NSLayoutConstraint.activate([
@@ -108,13 +108,9 @@ class WoofTabBarItemView: UIView {
     
     private func animateContainerUp(duration: Double = 0.2) {
         UIView.animate(withDuration: duration, animations: {
-            self.imageContainer.transform = CGAffineTransform(translationX: 0.0, y: -25.0)
+            self.imageContainer.transform = CGAffineTransform(translationX: 0.0, y: -20.0)
         }) { (_) in
-            UIView.animate(withDuration: duration, animations: {
-                self.imageContainer.transform = CGAffineTransform(translationX: 0.0, y: -20.0)
-            }) { (_) in
-                self.delegate?.didAnimate(itemView: self)
-            }
+            self.delegate?.didAnimate(itemView: self)
         }
     }
     
@@ -171,7 +167,6 @@ protocol WoofTabBarItemViewDelegate {
 
 extension WoofTabBarItemViewDelegate {
     func didTap(itemView: WoofTabBarItemView) {
-        
     }
     
     func shouldTap(itemView: WoofTabBarItemView) -> Bool {
@@ -183,6 +178,5 @@ extension WoofTabBarItemViewDelegate {
     }
     
     func didAnimate(itemView: WoofTabBarItemView) {
-        
     }
 }
