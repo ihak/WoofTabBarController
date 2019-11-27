@@ -10,21 +10,44 @@ import UIKit
 
 class WoofTabBarController: UIViewController {
     
-    @IBOutlet weak var tabBarView: WoofTabBarView!
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         let tabView = WoofTabBarView()
-
+        tabView.backgroundColor = UIColor.white
+        
         tabView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(tabView)
         NSLayoutConstraint.activate([
             tabView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             tabView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             tabView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            tabView.heightAnchor.constraint(equalToConstant: 70.0)
+            tabView.heightAnchor.constraint(equalToConstant: 44.0)
         ])
+        
+        let tabBarItem = WoofTabBarItemView()
+        tabBarItem.translatesAutoresizingMaskIntoConstraints = false
+        tabBarItem.backgroundColor = .random
+        self.view.addSubview(tabBarItem)
+        
+        let bezierView = BezierView()
+        bezierView.translatesAutoresizingMaskIntoConstraints = false
+        tabView.addSubview(bezierView)
+        
+        NSLayoutConstraint.activate([
+            bezierView.leadingAnchor.constraint(equalTo: tabView.leadingAnchor),
+            bezierView.trailingAnchor.constraint(equalTo: tabView.trailingAnchor),
+            bezierView.bottomAnchor.constraint(equalTo: tabView.bottomAnchor),
+            bezierView.topAnchor.constraint(equalTo: tabView.topAnchor)
+        ])
+        
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
+        bezierView.addShapeLayer()
+    }
+    
+    @IBAction func changePathPosition(_ sender: Any) {
+       
     }
 }
