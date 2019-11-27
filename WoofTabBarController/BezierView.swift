@@ -46,7 +46,7 @@ class BezierView: UIView {
     private func animateShape(position: CGFloat) {
         let newShapePath = curveShapePath(postion: position)
         let animation = CABasicAnimation(keyPath: "path")
-        animation.duration = 0.2
+        animation.duration = 0.15
         animation.toValue = newShapePath
         animation.fillMode = CAMediaTimingFillMode.forwards
         animation.isRemovedOnCompletion = false
