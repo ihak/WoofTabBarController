@@ -38,7 +38,7 @@ class WoofTabBarItemView: UIView {
             imageContainer.heightAnchor.constraint(equalToConstant: 40.0),
             imageContainer.widthAnchor.constraint(equalToConstant: 40.0),
             imageContainer.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-            imageContainer.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
+            imageContainer.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: -8.0)
         ])
         
         imageContainer.layer.cornerRadius = 20.0
@@ -61,6 +61,20 @@ class WoofTabBarItemView: UIView {
             image.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: -5.0),
             image.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor, constant: 5.0),
             image.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: -5.0)
+        ])
+        
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = .black
+        label.text = "Home"
+        label.font = .systemFont(ofSize: 13)
+        label.adjustsFontSizeToFitWidth = true
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(label)
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            label.topAnchor.constraint(equalTo: imageContainer.bottomAnchor)
         ])
         
         let notificationBubbleContainer = UIView()
