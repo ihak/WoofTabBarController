@@ -16,7 +16,7 @@ class WoofTabBarItemView: UIView {
     var delegate: WoofTabBarItemViewDelegate?
     
     override func draw(_ rect: CGRect) {
-        backgroundColor = .random
+        backgroundColor = .clear
         
         let containerView = UIView()
         containerView.backgroundColor = .clear
@@ -35,15 +35,15 @@ class WoofTabBarItemView: UIView {
         imageContainer.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(imageContainer)
         NSLayoutConstraint.activate([
-            imageContainer.heightAnchor.constraint(equalToConstant: 60.0),
-            imageContainer.widthAnchor.constraint(equalToConstant: 60),
+            imageContainer.heightAnchor.constraint(equalToConstant: 40.0),
+            imageContainer.widthAnchor.constraint(equalToConstant: 40.0),
             imageContainer.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             imageContainer.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
         ])
         
-        imageContainer.layer.cornerRadius = 30.0
+        imageContainer.layer.cornerRadius = 20.0
         imageContainer.clipsToBounds = true
-        imageContainer.backgroundColor = .random
+        imageContainer.backgroundColor = .clear
         
         // Add tap gesture to imageContainer view
         addTapGesture(view: imageContainer)
@@ -57,30 +57,32 @@ class WoofTabBarItemView: UIView {
         imageContainer.addSubview(image)
         
         NSLayoutConstraint.activate([
-            image.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 15.0),
-            image.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: -15.0),
-            image.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor, constant: 15.0),
-            image.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: -15.0)
+            image.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 5.0),
+            image.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: -5.0),
+            image.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor, constant: 5.0),
+            image.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: -5.0)
         ])
         
         let notificationBubbleContainer = UIView()
         notificationBubbleContainer.translatesAutoresizingMaskIntoConstraints = false
-        notificationBubbleContainer.layer.cornerRadius = 12.5
-        notificationBubbleContainer.backgroundColor = .random
+        notificationBubbleContainer.layer.cornerRadius = 10
+        notificationBubbleContainer.backgroundColor = .orange
         
         imageContainer.addSubview(notificationBubbleContainer)
         NSLayoutConstraint.activate([
-            notificationBubbleContainer.heightAnchor.constraint(equalToConstant: 25.0),
-            notificationBubbleContainer.widthAnchor.constraint(equalToConstant: 25.0),
-            notificationBubbleContainer.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 10.0),
-            notificationBubbleContainer.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: -15.0)
+            notificationBubbleContainer.heightAnchor.constraint(equalToConstant: 20.0),
+            notificationBubbleContainer.widthAnchor.constraint(equalToConstant: 20.0),
+            notificationBubbleContainer.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 5.0),
+            notificationBubbleContainer.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: -20.0)
         ])
         
         
         let notificationBubbleLabel = UILabel()
         notificationBubbleLabel.textAlignment = .center
+        notificationBubbleLabel.textColor = .white
         notificationBubbleLabel.text = "99"
-        notificationBubbleLabel.minimumScaleFactor = 0.5
+//        notificationBubbleLabel.minimumScaleFactor = 0.5
+        notificationBubbleLabel.font = .boldSystemFont(ofSize: 9)
         notificationBubbleLabel.adjustsFontSizeToFitWidth = true
         
         notificationBubbleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -108,7 +110,11 @@ class WoofTabBarItemView: UIView {
     
     private func animateContainerUp(duration: Double = 0.2) {
         UIView.animate(withDuration: duration, animations: {
-            self.imageContainer.transform = CGAffineTransform(translationX: 0.0, y: -20.0)
+            var t = CGAffineTransform.identity
+            t = t.translatedBy(x: 0.0, y: -20.0)
+            t = t.scaledBy(x: 1.2, y: 1.2)
+            self.imageContainer.transform = t
+            self.imageContainer.backgroundColor = .white
         }) { (_) in
             self.delegate?.didAnimate(itemView: self)
         }
@@ -117,6 +123,7 @@ class WoofTabBarItemView: UIView {
     private func animateContainerBack(duration: Double = 0.2) {
         UIView.animate(withDuration: duration, animations: {
             self.imageContainer.transform = CGAffineTransform.identity
+            self.imageContainer.backgroundColor = .clear
         }, completion: nil)
     }
     

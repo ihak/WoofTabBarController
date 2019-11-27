@@ -35,7 +35,7 @@ class WoofTabBarView: UIView {
         guard stackView.superview == nil else {
             return
         }
-        
+        self.backgroundColor = .clear
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fillEqually

@@ -16,7 +16,7 @@ class BezierView: UIView {
     func addShapeLayer() {
         shapeLayer.path = curveShapePath(postion: initialPosition)
         shapeLayer.strokeColor = UIColor.clear.cgColor
-        shapeLayer.fillColor = UIColor.red.cgColor
+        shapeLayer.fillColor = UIColor.white.cgColor
         self.layer.addSublayer(shapeLayer)
     }
     
