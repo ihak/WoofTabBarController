@@ -11,13 +11,17 @@ import UIKit
 class WoofTabBarItemView: UIView {
 
     var item: WoofTabBarItem!
-    var imageContainer: UIView!
+    var imageContainer = UIView()
     
     var delegate: WoofTabBarItemViewDelegate?
     
     override func draw(_ rect: CGRect) {
-        backgroundColor = .clear
         
+        guard imageContainer.superview == nil else {
+            return
+        }
+        
+        backgroundColor = .clear
         let containerView = UIView()
         containerView.backgroundColor = .clear
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -31,7 +35,6 @@ class WoofTabBarItemView: UIView {
         
         // contains icon image and notification bubble view
         // receives touches and animates
-        imageContainer = UIView()
         imageContainer.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(imageContainer)
         NSLayoutConstraint.activate([
