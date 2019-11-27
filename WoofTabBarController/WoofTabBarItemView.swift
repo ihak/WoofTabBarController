@@ -11,12 +11,16 @@ import UIKit
 class WoofTabBarItemView: UIView {
 
     var item: WoofTabBarItem!
+    
+    // contains the image and notification view
     var imageContainer = UIView()
+    
+    // circular view that highlights when item is selected
+    var backCircleView = UIView()
     
     var delegate: WoofTabBarItemViewDelegate?
     
     override func draw(_ rect: CGRect) {
-        
         guard imageContainer.superview == nil else {
             return
         }
@@ -51,6 +55,17 @@ class WoofTabBarItemView: UIView {
         // Add tap gesture to imageContainer view
         addTapGesture(view: imageContainer)
         
+        backCircleView.translatesAutoresizingMaskIntoConstraints = false
+        backCircleView.backgroundColor = .white
+        backCircleView.layer.cornerRadius = 20.0
+        imageContainer.addSubview(backCircleView)
+        NSLayoutConstraint.activate([
+            backCircleView.topAnchor.constraint(equalTo: imageContainer.bottomAnchor),
+            backCircleView.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor),
+            backCircleView.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor),
+            backCircleView.heightAnchor.constraint(equalTo: imageContainer.heightAnchor)
+        ])
+
         let image = UIImageView(image: UIImage(named: "home"))
         image.contentMode = .scaleAspectFit
         image.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
@@ -98,7 +113,6 @@ class WoofTabBarItemView: UIView {
         notificationBubbleLabel.textAlignment = .center
         notificationBubbleLabel.textColor = .white
         notificationBubbleLabel.text = "99"
-//        notificationBubbleLabel.minimumScaleFactor = 0.5
         notificationBubbleLabel.font = .boldSystemFont(ofSize: 9)
         notificationBubbleLabel.adjustsFontSizeToFitWidth = true
         
@@ -125,13 +139,14 @@ class WoofTabBarItemView: UIView {
         view.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    private func animateContainerUp(duration: Double = 0.2) {
+    private func animateContainerUp(duration: Double = 0.2) {        
         UIView.animate(withDuration: duration, animations: {
             var t = CGAffineTransform.identity
             t = t.translatedBy(x: 0.0, y: -20.0)
             t = t.scaledBy(x: 1.2, y: 1.2)
             self.imageContainer.transform = t
-            self.imageContainer.backgroundColor = .white
+            
+            self.backCircleView.transform = CGAffineTransform(translationX: 0.0, y: -40.0)
         }) { (_) in
             self.delegate?.didAnimate(itemView: self)
         }
@@ -139,8 +154,8 @@ class WoofTabBarItemView: UIView {
     
     private func animateContainerBack(duration: Double = 0.2) {
         UIView.animate(withDuration: duration, animations: {
-            self.imageContainer.transform = CGAffineTransform.identity
-            self.imageContainer.backgroundColor = .clear
+            self.imageContainer.transform = .identity
+            self.backCircleView.transform = .identity
         }, completion: nil)
     }
     

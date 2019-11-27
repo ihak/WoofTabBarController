@@ -22,27 +22,8 @@ class WoofTabBarController: UIViewController {
         NSLayoutConstraint.activate([
             tabView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             tabView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            tabView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            tabView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
             tabView.heightAnchor.constraint(equalToConstant: 60.0)
         ])
-        
-//        let bezierView = BezierView()
-//        bezierView.translatesAutoresizingMaskIntoConstraints = false
-//        tabView.addSubview(bezierView)
-//
-//        NSLayoutConstraint.activate([
-//            bezierView.leadingAnchor.constraint(equalTo: tabView.leadingAnchor),
-//            bezierView.trailingAnchor.constraint(equalTo: tabView.trailingAnchor),
-//            bezierView.bottomAnchor.constraint(equalTo: tabView.bottomAnchor),
-//            bezierView.topAnchor.constraint(equalTo: tabView.topAnchor)
-//        ])
-//
-//        self.view.setNeedsLayout()
-//        self.view.layoutIfNeeded()
-//        bezierView.addShapeLayer()
-    }
-    
-    @IBAction func changePathPosition(_ sender: Any) {
-       
-    }
+    }    
 }
