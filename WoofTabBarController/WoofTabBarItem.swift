@@ -11,9 +11,15 @@ import UIKit
 class WoofTabBarItem {
     var title: String
     var image: String
+    var notificationCount = 0
     
-    init(title: String, image: String) {
+    var count: String? {
+        return String(notificationCount)
+    }
+    
+    init(title: String, image: String, notificationCount: Int = 0) {
         self.title = title
         self.image = image
+        self.notificationCount = notificationCount
     }
 }

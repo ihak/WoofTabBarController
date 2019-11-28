@@ -55,18 +55,32 @@ class WoofTabBarItemView: UIView {
         // Add tap gesture to imageContainer view
         addTapGesture(view: imageContainer)
         
+        // circle container view - hides the circle view when its below the bar
+        // by cliping bounds.
+        let backCircleContainer = UIView()
+        backCircleContainer.clipsToBounds = true
+        backCircleContainer.translatesAutoresizingMaskIntoConstraints = false
+        backCircleContainer.backgroundColor = .clear
+        containerView.insertSubview(backCircleContainer, belowSubview: imageContainer)
+        NSLayoutConstraint.activate([
+            backCircleContainer.topAnchor.constraint(equalTo: containerView.topAnchor, constant: -22.0),
+            backCircleContainer.centerXAnchor.constraint(equalTo: imageContainer.centerXAnchor),
+            backCircleContainer.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            backCircleContainer.widthAnchor.constraint(equalToConstant: 50.0)
+        ])
+
         backCircleView.translatesAutoresizingMaskIntoConstraints = false
         backCircleView.backgroundColor = .white
         backCircleView.layer.cornerRadius = 20.0
-        imageContainer.addSubview(backCircleView)
+        backCircleContainer.addSubview(backCircleView)
         NSLayoutConstraint.activate([
-            backCircleView.topAnchor.constraint(equalTo: imageContainer.bottomAnchor),
-            backCircleView.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor),
-            backCircleView.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor),
-            backCircleView.heightAnchor.constraint(equalTo: imageContainer.heightAnchor)
+            backCircleView.topAnchor.constraint(equalTo: backCircleContainer.bottomAnchor),
+            backCircleView.centerXAnchor.constraint(equalTo: backCircleContainer.centerXAnchor),
+            backCircleView.widthAnchor.constraint(equalToConstant: 40),
+            backCircleView.heightAnchor.constraint(equalToConstant: 40)
         ])
 
-        let image = UIImageView(image: UIImage(named: "home"))
+        let image = UIImageView(image: UIImage(named: item.image))
         image.contentMode = .scaleAspectFit
         image.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         image.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
@@ -84,7 +98,7 @@ class WoofTabBarItemView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .black
-        label.text = "Home"
+        label.text = item.title
         label.font = .systemFont(ofSize: 13)
         label.adjustsFontSizeToFitWidth = true
         
@@ -112,10 +126,9 @@ class WoofTabBarItemView: UIView {
         let notificationBubbleLabel = UILabel()
         notificationBubbleLabel.textAlignment = .center
         notificationBubbleLabel.textColor = .white
-        notificationBubbleLabel.text = "99"
         notificationBubbleLabel.font = .boldSystemFont(ofSize: 9)
         notificationBubbleLabel.adjustsFontSizeToFitWidth = true
-        
+        notificationBubbleLabel.text = item.count
         notificationBubbleLabel.translatesAutoresizingMaskIntoConstraints = false
         notificationBubbleContainer.addSubview(notificationBubbleLabel)
         NSLayoutConstraint.activate([
@@ -125,6 +138,12 @@ class WoofTabBarItemView: UIView {
             notificationBubbleLabel.trailingAnchor.constraint(equalTo: notificationBubbleContainer.trailingAnchor, constant: -3.0)
         ])
         
+        // hides notification bubble
+        if item.notificationCount <= 0 {
+            notificationBubbleContainer.isHidden = true
+        }
+        
+        // select default item
         if delegate?.isDefaultItem(itemView: self) == true {
             self.select(animated: false)
         }
@@ -139,14 +158,18 @@ class WoofTabBarItemView: UIView {
         view.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    private func animateContainerUp(duration: Double = 0.2) {        
+    private func animateContainerUp(duration: Double = 0.2) {
         UIView.animate(withDuration: duration, animations: {
             var t = CGAffineTransform.identity
             t = t.translatedBy(x: 0.0, y: -20.0)
             t = t.scaledBy(x: 1.2, y: 1.2)
             self.imageContainer.transform = t
             
-            self.backCircleView.transform = CGAffineTransform(translationX: 0.0, y: -40.0)
+            t = CGAffineTransform.identity
+            t = t.translatedBy(x: 0.0, y: -78.0)
+            t = t.scaledBy(x: 1.2, y: 1.2)
+            self.backCircleView.transform = t
+            self.backCircleView.alpha = 1.0
         }) { (_) in
             self.delegate?.didAnimate(itemView: self)
         }
@@ -156,6 +179,7 @@ class WoofTabBarItemView: UIView {
         UIView.animate(withDuration: duration, animations: {
             self.imageContainer.transform = .identity
             self.backCircleView.transform = .identity
+            self.backCircleView.alpha = 0.0
         }, completion: nil)
     }
     

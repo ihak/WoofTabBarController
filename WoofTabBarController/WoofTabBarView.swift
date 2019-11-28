@@ -10,13 +10,7 @@ import UIKit
 
 class WoofTabBarView: UIView {
 
-    var barItems = [
-        WoofTabBarItem(title: "Hello", image: "home"),
-        WoofTabBarItem(title: "World", image: "home"),
-        WoofTabBarItem(title: "You", image: "home"),
-        WoofTabBarItem(title: "You", image: "home"),
-        WoofTabBarItem(title: "You", image: "home")
-    ]
+    var barItems = [WoofTabBarItem]()
     
     let bezierView = BezierView()
     let stackView = UIStackView()
@@ -30,7 +24,12 @@ class WoofTabBarView: UIView {
             unSelectItem(index: oldValue)
         }
     }
-        
+     
+    convenience init(barItems: [WoofTabBarItem]) {
+        self.init()
+        self.barItems.append(contentsOf: barItems)
+    }
+    
     override func layoutSubviews() {
         guard stackView.superview == nil else {
             return

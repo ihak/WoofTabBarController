@@ -12,9 +12,17 @@ class WoofTabBarController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        let tabView = WoofTabBarView()
+        
+        let viewcontrollers = [Tab1Controller(), Tab2Controller()]
+        var barItems = [WoofTabBarItem]()
+        for vc in viewcontrollers {
+            if let vc = vc as? WoofTabBarControllerDataSource {
+                barItems.append(vc.woofTabBarItem())
+            }
+        }
+        
+        let tabView = WoofTabBarView(barItems: barItems)
         tabView.backgroundColor = UIColor.white
         
         tabView.translatesAutoresizingMaskIntoConstraints = false
@@ -26,4 +34,20 @@ class WoofTabBarController: UIViewController {
             tabView.heightAnchor.constraint(equalToConstant: 60.0)
         ])
     }    
+}
+
+protocol WoofTabBarControllerDataSource {
+    func woofTabBarItem() -> WoofTabBarItem
+}
+
+class Tab1Controller: UIViewController, WoofTabBarControllerDataSource {
+    public func woofTabBarItem() -> WoofTabBarItem {
+        return WoofTabBarItem(title: "Tab 1", image: "home")
+    }
+}
+
+class Tab2Controller: UIViewController, WoofTabBarControllerDataSource {
+    public func woofTabBarItem() -> WoofTabBarItem {
+        return WoofTabBarItem(title: "Tab 2", image: "heart")
+    }
 }
