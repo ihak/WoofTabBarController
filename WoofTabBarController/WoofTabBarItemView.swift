@@ -105,7 +105,8 @@ class WoofTabBarItemView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(label)
         NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            label.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 3.0),
+            label.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -3.0),
             label.topAnchor.constraint(equalTo: imageContainer.bottomAnchor)
         ])
         

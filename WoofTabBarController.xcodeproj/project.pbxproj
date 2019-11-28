@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		74AEF422238803A8008BFAF9 /* WoofTabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AEF421238803A8008BFAF9 /* WoofTabBarItemView.swift */; };
-		74B8E45E2387E8C2006CAB24 /* WoofTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8E45D2387E8C2006CAB24 /* WoofTabBarController.swift */; };
+		74B8E45E2387E8C2006CAB24 /* WoofTabBarControllerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8E45D2387E8C2006CAB24 /* WoofTabBarControllerClass.swift */; };
 		74B8E4602387E8E1006CAB24 /* WoofTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8E45F2387E8E1006CAB24 /* WoofTabBarView.swift */; };
 		74B8E4622387E8EE006CAB24 /* WoofTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8E4612387E8EE006CAB24 /* WoofTabBarItem.swift */; };
 		74F6D434238CF92000BD7B9E /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F6D433238CF92000BD7B9E /* MoreVC.swift */; };
@@ -19,6 +19,7 @@
 		E41345892387C2D90090BC0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E41345872387C2D90090BC0F /* LaunchScreen.storyboard */; };
 		E41345942387C2D90090BC0F /* WoofTabBarControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41345932387C2D90090BC0F /* WoofTabBarControllerTests.swift */; };
 		E44C60FE238CFE2700926298 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C60FD238CFE2600926298 /* ViewController.swift */; };
+		E44C6100238FCF9A00926298 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C60FF238FCF9900926298 /* ParentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +34,7 @@
 
 /* Begin PBXFileReference section */
 		74AEF421238803A8008BFAF9 /* WoofTabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoofTabBarItemView.swift; sourceTree = "<group>"; };
-		74B8E45D2387E8C2006CAB24 /* WoofTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoofTabBarController.swift; sourceTree = "<group>"; };
+		74B8E45D2387E8C2006CAB24 /* WoofTabBarControllerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoofTabBarControllerClass.swift; sourceTree = "<group>"; };
 		74B8E45F2387E8E1006CAB24 /* WoofTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoofTabBarView.swift; sourceTree = "<group>"; };
 		74B8E4612387E8EE006CAB24 /* WoofTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoofTabBarItem.swift; sourceTree = "<group>"; };
 		74F6D433238CF92000BD7B9E /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
@@ -48,6 +49,7 @@
 		E41345932387C2D90090BC0F /* WoofTabBarControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoofTabBarControllerTests.swift; sourceTree = "<group>"; };
 		E41345952387C2D90090BC0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E44C60FD238CFE2600926298 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E44C60FF238FCF9900926298 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,13 +96,14 @@
 				E41345852387C2D90090BC0F /* Assets.xcassets */,
 				E41345872387C2D90090BC0F /* LaunchScreen.storyboard */,
 				E413458A2387C2D90090BC0F /* Info.plist */,
-				74B8E45D2387E8C2006CAB24 /* WoofTabBarController.swift */,
+				74B8E45D2387E8C2006CAB24 /* WoofTabBarControllerClass.swift */,
 				74B8E45F2387E8E1006CAB24 /* WoofTabBarView.swift */,
 				74B8E4612387E8EE006CAB24 /* WoofTabBarItem.swift */,
 				74AEF421238803A8008BFAF9 /* WoofTabBarItemView.swift */,
 				E44C60FD238CFE2600926298 /* ViewController.swift */,
 				74F6D433238CF92000BD7B9E /* MoreVC.swift */,
 				74FB2F04238E36AB001B6FD6 /* BezierView.swift */,
+				E44C60FF238FCF9900926298 /* ParentViewController.swift */,
 			);
 			path = WoofTabBarController;
 			sourceTree = "<group>";
@@ -216,13 +219,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E44C60FE238CFE2700926298 /* ViewController.swift in Sources */,
-				74B8E45E2387E8C2006CAB24 /* WoofTabBarController.swift in Sources */,
+				74B8E45E2387E8C2006CAB24 /* WoofTabBarControllerClass.swift in Sources */,
 				74F6D434238CF92000BD7B9E /* MoreVC.swift in Sources */,
 				74B8E4622387E8EE006CAB24 /* WoofTabBarItem.swift in Sources */,
 				E413457D2387C2D80090BC0F /* AppDelegate.swift in Sources */,
 				74B8E4602387E8E1006CAB24 /* WoofTabBarView.swift in Sources */,
 				74FB2F05238E36AB001B6FD6 /* BezierView.swift in Sources */,
 				74AEF422238803A8008BFAF9 /* WoofTabBarItemView.swift in Sources */,
+				E44C6100238FCF9A00926298 /* ParentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

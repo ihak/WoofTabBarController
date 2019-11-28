@@ -12,6 +12,8 @@ class WoofTabBarView: UIView {
 
     var barItems = [WoofTabBarItem]()
     
+    var delegate: WoofTabBarViewDelegate?
+
     let bezierView = BezierView()
     let stackView = UIStackView()
     var defaultSelectedIndex = 0
@@ -111,6 +113,7 @@ extension WoofTabBarView: WoofTabBarItemViewDelegate {
             self.changeCurveShape(position: itemView.center)
             self.selectedIndex = index
             print("selected index", selectedIndex)
+            self.delegate?.didSelectItem(itemView: itemView, atIndex: index)
         }
     }
 }
@@ -122,4 +125,8 @@ extension UIColor {
                        blue: .random(in: 0...1),
                        alpha: 1.0)
     }
+}
+
+protocol WoofTabBarViewDelegate {
+    func didSelectItem(itemView: WoofTabBarItemView, atIndex: Int)
 }
