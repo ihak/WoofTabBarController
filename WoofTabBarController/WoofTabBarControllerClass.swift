@@ -42,9 +42,8 @@ class WoofTabBarControllerClass: UIViewController {
         NSLayoutConstraint.activate([
             tabView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             tabView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            tabView.topAnchor.constraint(equalTo: tabContainerView.bottomAnchor),
-            tabView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
-            tabView.heightAnchor.constraint(equalToConstant: 60.0)
+            tabView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
+            tabView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
     }
     

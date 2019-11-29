@@ -11,7 +11,6 @@ import UIKit
 class WoofTabBarView: UIView {
 
     var barItems = [WoofTabBarItem]()
-    
     var delegate: WoofTabBarViewDelegate?
 
     let bezierView = BezierView()
@@ -36,6 +35,7 @@ class WoofTabBarView: UIView {
         guard stackView.superview == nil else {
             return
         }
+        
         self.backgroundColor = .clear
         stackView.axis = .horizontal
         stackView.alignment = .fill
@@ -52,7 +52,7 @@ class WoofTabBarView: UIView {
         self.addSubview(stackView)
         
         stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
         stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         
