@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  WoofTabBarController
+//  Example
 //
-//  Created by Hassan Ahmed on 22/11/2019.
+//  Created by Hassan Ahmed on 02/12/2019.
 //  Copyright © 2019 Arpatech Pvt. Ltd. All rights reserved.
 //
 

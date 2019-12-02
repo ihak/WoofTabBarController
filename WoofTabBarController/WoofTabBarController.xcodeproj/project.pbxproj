@@ -7,108 +7,122 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E413457D2387C2D80090BC0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E413457C2387C2D80090BC0F /* AppDelegate.swift */; };
-		E413457F2387C2D80090BC0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E413457E2387C2D80090BC0F /* SceneDelegate.swift */; };
-		E41345812387C2D80090BC0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41345802387C2D80090BC0F /* ViewController.swift */; };
-		E41345842387C2D80090BC0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E41345822387C2D80090BC0F /* Main.storyboard */; };
-		E41345862387C2D90090BC0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E41345852387C2D90090BC0F /* Assets.xcassets */; };
-		E41345892387C2D90090BC0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E41345872387C2D90090BC0F /* LaunchScreen.storyboard */; };
-		E41345942387C2D90090BC0F /* WoofTabBarControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41345932387C2D90090BC0F /* WoofTabBarControllerTests.swift */; };
+		E44C6115239134C000926298 /* WoofTabBarController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44C610B239134BF00926298 /* WoofTabBarController.framework */; };
+		E44C611A239134C000926298 /* WoofTabBarControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C6119239134C000926298 /* WoofTabBarControllerTests.swift */; };
+		E44C611C239134C000926298 /* WoofTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = E44C610E239134BF00926298 /* WoofTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E44C6128239136BF00926298 /* WoofTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C6125239136BF00926298 /* WoofTabBarItem.swift */; };
+		E44C6129239136BF00926298 /* WoofTabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C6126239136BF00926298 /* WoofTabBarItemView.swift */; };
+		E44C612A239136BF00926298 /* WoofTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C6127239136BF00926298 /* WoofTabBarView.swift */; };
+		E44C612C2391374900926298 /* BezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C612B2391374900926298 /* BezierView.swift */; };
+		E44C615C2394D4B600926298 /* WoofTabBarControllerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C615B2394D4B500926298 /* WoofTabBarControllerClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E41345902387C2D90090BC0F /* PBXContainerItemProxy */ = {
+		E44C6116239134C000926298 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E41345712387C2D80090BC0F /* Project object */;
+			containerPortal = E44C6102239134BF00926298 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E41345782387C2D80090BC0F;
+			remoteGlobalIDString = E44C610A239134BF00926298;
 			remoteInfo = WoofTabBarController;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E41345792387C2D80090BC0F /* WoofTabBarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoofTabBarController.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E413457C2387C2D80090BC0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E413457E2387C2D80090BC0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E41345802387C2D80090BC0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E41345832387C2D80090BC0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E41345852387C2D90090BC0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E41345882387C2D90090BC0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E413458A2387C2D90090BC0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E413458F2387C2D90090BC0F /* WoofTabBarControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WoofTabBarControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E41345932387C2D90090BC0F /* WoofTabBarControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoofTabBarControllerTests.swift; sourceTree = "<group>"; };
-		E41345952387C2D90090BC0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E44C610B239134BF00926298 /* WoofTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WoofTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E44C610E239134BF00926298 /* WoofTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WoofTabBarController.h; sourceTree = "<group>"; };
+		E44C610F239134BF00926298 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E44C6114239134C000926298 /* WoofTabBarControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WoofTabBarControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E44C6119239134C000926298 /* WoofTabBarControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoofTabBarControllerTests.swift; sourceTree = "<group>"; };
+		E44C611B239134C000926298 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E44C6125239136BF00926298 /* WoofTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WoofTabBarItem.swift; sourceTree = "<group>"; };
+		E44C6126239136BF00926298 /* WoofTabBarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WoofTabBarItemView.swift; sourceTree = "<group>"; };
+		E44C6127239136BF00926298 /* WoofTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WoofTabBarView.swift; sourceTree = "<group>"; };
+		E44C612B2391374900926298 /* BezierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierView.swift; sourceTree = "<group>"; };
+		E44C615B2394D4B500926298 /* WoofTabBarControllerClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WoofTabBarControllerClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E41345762387C2D80090BC0F /* Frameworks */ = {
+		E44C6108239134BF00926298 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E413458C2387C2D90090BC0F /* Frameworks */ = {
+		E44C6111239134BF00926298 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E44C6115239134C000926298 /* WoofTabBarController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E41345702387C2D80090BC0F = {
+		E44C6101239134BF00926298 = {
 			isa = PBXGroup;
 			children = (
-				E413457B2387C2D80090BC0F /* WoofTabBarController */,
-				E41345922387C2D90090BC0F /* WoofTabBarControllerTests */,
-				E413457A2387C2D80090BC0F /* Products */,
+				E44C610D239134BF00926298 /* WoofTabBarController */,
+				E44C6118239134C000926298 /* WoofTabBarControllerTests */,
+				E44C610C239134BF00926298 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E413457A2387C2D80090BC0F /* Products */ = {
+		E44C610C239134BF00926298 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E41345792387C2D80090BC0F /* WoofTabBarController.app */,
-				E413458F2387C2D90090BC0F /* WoofTabBarControllerTests.xctest */,
+				E44C610B239134BF00926298 /* WoofTabBarController.framework */,
+				E44C6114239134C000926298 /* WoofTabBarControllerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E413457B2387C2D80090BC0F /* WoofTabBarController */ = {
+		E44C610D239134BF00926298 /* WoofTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				E413457C2387C2D80090BC0F /* AppDelegate.swift */,
-				E413457E2387C2D80090BC0F /* SceneDelegate.swift */,
-				E41345802387C2D80090BC0F /* ViewController.swift */,
-				E41345822387C2D80090BC0F /* Main.storyboard */,
-				E41345852387C2D90090BC0F /* Assets.xcassets */,
-				E41345872387C2D90090BC0F /* LaunchScreen.storyboard */,
-				E413458A2387C2D90090BC0F /* Info.plist */,
+				E44C612B2391374900926298 /* BezierView.swift */,
+				E44C615B2394D4B500926298 /* WoofTabBarControllerClass.swift */,
+				E44C6125239136BF00926298 /* WoofTabBarItem.swift */,
+				E44C6126239136BF00926298 /* WoofTabBarItemView.swift */,
+				E44C6127239136BF00926298 /* WoofTabBarView.swift */,
+				E44C610E239134BF00926298 /* WoofTabBarController.h */,
+				E44C610F239134BF00926298 /* Info.plist */,
 			);
 			path = WoofTabBarController;
 			sourceTree = "<group>";
 		};
-		E41345922387C2D90090BC0F /* WoofTabBarControllerTests */ = {
+		E44C6118239134C000926298 /* WoofTabBarControllerTests */ = {
 			isa = PBXGroup;
 			children = (
-				E41345932387C2D90090BC0F /* WoofTabBarControllerTests.swift */,
-				E41345952387C2D90090BC0F /* Info.plist */,
+				E44C6119239134C000926298 /* WoofTabBarControllerTests.swift */,
+				E44C611B239134C000926298 /* Info.plist */,
 			);
 			path = WoofTabBarControllerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		E44C6106239134BF00926298 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E44C611C239134C000926298 /* WoofTabBarController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		E41345782387C2D80090BC0F /* WoofTabBarController */ = {
+		E44C610A239134BF00926298 /* WoofTabBarController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E41345982387C2D90090BC0F /* Build configuration list for PBXNativeTarget "WoofTabBarController" */;
+			buildConfigurationList = E44C611F239134C000926298 /* Build configuration list for PBXNativeTarget "WoofTabBarController" */;
 			buildPhases = (
-				E41345752387C2D80090BC0F /* Sources */,
-				E41345762387C2D80090BC0F /* Frameworks */,
-				E41345772387C2D80090BC0F /* Resources */,
+				E44C6106239134BF00926298 /* Headers */,
+				E44C6107239134BF00926298 /* Sources */,
+				E44C6108239134BF00926298 /* Frameworks */,
+				E44C6109239134BF00926298 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -116,47 +130,47 @@
 			);
 			name = WoofTabBarController;
 			productName = WoofTabBarController;
-			productReference = E41345792387C2D80090BC0F /* WoofTabBarController.app */;
-			productType = "com.apple.product-type.application";
+			productReference = E44C610B239134BF00926298 /* WoofTabBarController.framework */;
+			productType = "com.apple.product-type.framework";
 		};
-		E413458E2387C2D90090BC0F /* WoofTabBarControllerTests */ = {
+		E44C6113239134BF00926298 /* WoofTabBarControllerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E413459B2387C2D90090BC0F /* Build configuration list for PBXNativeTarget "WoofTabBarControllerTests" */;
+			buildConfigurationList = E44C6122239134C000926298 /* Build configuration list for PBXNativeTarget "WoofTabBarControllerTests" */;
 			buildPhases = (
-				E413458B2387C2D90090BC0F /* Sources */,
-				E413458C2387C2D90090BC0F /* Frameworks */,
-				E413458D2387C2D90090BC0F /* Resources */,
+				E44C6110239134BF00926298 /* Sources */,
+				E44C6111239134BF00926298 /* Frameworks */,
+				E44C6112239134BF00926298 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E41345912387C2D90090BC0F /* PBXTargetDependency */,
+				E44C6117239134C000926298 /* PBXTargetDependency */,
 			);
 			name = WoofTabBarControllerTests;
 			productName = WoofTabBarControllerTests;
-			productReference = E413458F2387C2D90090BC0F /* WoofTabBarControllerTests.xctest */;
+			productReference = E44C6114239134C000926298 /* WoofTabBarControllerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E41345712387C2D80090BC0F /* Project object */ = {
+		E44C6102239134BF00926298 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Arpatech Pvt. Ltd.";
 				TargetAttributes = {
-					E41345782387C2D80090BC0F = {
+					E44C610A239134BF00926298 = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 					};
-					E413458E2387C2D90090BC0F = {
+					E44C6113239134BF00926298 = {
 						CreatedOnToolsVersion = 11.1;
-						TestTargetID = E41345782387C2D80090BC0F;
 					};
 				};
 			};
-			buildConfigurationList = E41345742387C2D80090BC0F /* Build configuration list for PBXProject "WoofTabBarController" */;
+			buildConfigurationList = E44C6105239134BF00926298 /* Build configuration list for PBXProject "WoofTabBarController" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -164,29 +178,26 @@
 				en,
 				Base,
 			);
-			mainGroup = E41345702387C2D80090BC0F;
-			productRefGroup = E413457A2387C2D80090BC0F /* Products */;
+			mainGroup = E44C6101239134BF00926298;
+			productRefGroup = E44C610C239134BF00926298 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E41345782387C2D80090BC0F /* WoofTabBarController */,
-				E413458E2387C2D90090BC0F /* WoofTabBarControllerTests */,
+				E44C610A239134BF00926298 /* WoofTabBarController */,
+				E44C6113239134BF00926298 /* WoofTabBarControllerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E41345772387C2D80090BC0F /* Resources */ = {
+		E44C6109239134BF00926298 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E41345892387C2D90090BC0F /* LaunchScreen.storyboard in Resources */,
-				E41345862387C2D90090BC0F /* Assets.xcassets in Resources */,
-				E41345842387C2D80090BC0F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E413458D2387C2D90090BC0F /* Resources */ = {
+		E44C6112239134BF00926298 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -196,55 +207,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E41345752387C2D80090BC0F /* Sources */ = {
+		E44C6107239134BF00926298 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E41345812387C2D80090BC0F /* ViewController.swift in Sources */,
-				E413457D2387C2D80090BC0F /* AppDelegate.swift in Sources */,
-				E413457F2387C2D80090BC0F /* SceneDelegate.swift in Sources */,
+				E44C612A239136BF00926298 /* WoofTabBarView.swift in Sources */,
+				E44C6129239136BF00926298 /* WoofTabBarItemView.swift in Sources */,
+				E44C6128239136BF00926298 /* WoofTabBarItem.swift in Sources */,
+				E44C615C2394D4B600926298 /* WoofTabBarControllerClass.swift in Sources */,
+				E44C612C2391374900926298 /* BezierView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E413458B2387C2D90090BC0F /* Sources */ = {
+		E44C6110239134BF00926298 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E41345942387C2D90090BC0F /* WoofTabBarControllerTests.swift in Sources */,
+				E44C611A239134C000926298 /* WoofTabBarControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E41345912387C2D90090BC0F /* PBXTargetDependency */ = {
+		E44C6117239134C000926298 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E41345782387C2D80090BC0F /* WoofTabBarController */;
-			targetProxy = E41345902387C2D90090BC0F /* PBXContainerItemProxy */;
+			target = E44C610A239134BF00926298 /* WoofTabBarController */;
+			targetProxy = E44C6116239134C000926298 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		E41345822387C2D80090BC0F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E41345832387C2D80090BC0F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E41345872387C2D90090BC0F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E41345882387C2D90090BC0F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		E41345962387C2D90090BC0F /* Debug */ = {
+		E44C611D239134C000926298 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -277,6 +271,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -301,10 +296,12 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		E41345972387C2D90090BC0F /* Release */ = {
+		E44C611E239134C000926298 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -337,6 +334,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -355,54 +353,69 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		E41345992387C2D90090BC0F /* Debug */ = {
+		E44C6120239134C000926298 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = UJTG72FSW8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WoofTabBarController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ihak.arpatech.WoofTabBarController;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		E413459A2387C2D90090BC0F /* Release */ = {
+		E44C6121239134C000926298 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = UJTG72FSW8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WoofTabBarController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ihak.arpatech.WoofTabBarController;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		E413459C2387C2D90090BC0F /* Debug */ = {
+		E44C6123239134C000926298 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UJTG72FSW8;
 				INFOPLIST_FILE = WoofTabBarControllerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,19 +425,16 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WoofTabBarController.app/WoofTabBarController";
 			};
 			name = Debug;
 		};
-		E413459D2387C2D90090BC0F /* Release */ = {
+		E44C6124239134C000926298 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UJTG72FSW8;
 				INFOPLIST_FILE = WoofTabBarControllerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -434,41 +444,40 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WoofTabBarController.app/WoofTabBarController";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E41345742387C2D80090BC0F /* Build configuration list for PBXProject "WoofTabBarController" */ = {
+		E44C6105239134BF00926298 /* Build configuration list for PBXProject "WoofTabBarController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E41345962387C2D90090BC0F /* Debug */,
-				E41345972387C2D90090BC0F /* Release */,
+				E44C611D239134C000926298 /* Debug */,
+				E44C611E239134C000926298 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E41345982387C2D90090BC0F /* Build configuration list for PBXNativeTarget "WoofTabBarController" */ = {
+		E44C611F239134C000926298 /* Build configuration list for PBXNativeTarget "WoofTabBarController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E41345992387C2D90090BC0F /* Debug */,
-				E413459A2387C2D90090BC0F /* Release */,
+				E44C6120239134C000926298 /* Debug */,
+				E44C6121239134C000926298 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E413459B2387C2D90090BC0F /* Build configuration list for PBXNativeTarget "WoofTabBarControllerTests" */ = {
+		E44C6122239134C000926298 /* Build configuration list for PBXNativeTarget "WoofTabBarControllerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E413459C2387C2D90090BC0F /* Debug */,
-				E413459D2387C2D90090BC0F /* Release */,
+				E44C6123239134C000926298 /* Debug */,
+				E44C6124239134C000926298 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E41345712387C2D80090BC0F /* Project object */;
+	rootObject = E44C6102239134BF00926298 /* Project object */;
 }
