@@ -1,0 +1,16 @@
+PODS:
+  - WoofTabBarController (0.0.1)
+
+DEPENDENCIES:
+  - WoofTabBarController (from `../`)
+
+EXTERNAL SOURCES:
+  WoofTabBarController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  WoofTabBarController: 93910dc9caee2580afc6ed91ecae3ebfc76173f1
+
+PODFILE CHECKSUM: b53d6e21317180900cfe220b0efbd9b5302a898f
+
+COCOAPODS: 1.7.0

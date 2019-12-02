@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WoofTabBarItem {
+public class WoofTabBarItem {
     var title: String
     var image: String
     var notificationCount = 0
@@ -17,7 +17,7 @@ class WoofTabBarItem {
         return String(notificationCount)
     }
     
-    init(title: String, image: String, notificationCount: Int = 0) {
+    public init(title: String, image: String, notificationCount: Int = 0) {
         self.title = title
         self.image = image
         self.notificationCount = notificationCount

@@ -1,0 +1,6 @@
+framework module WoofTabBarController {
+  umbrella header "WoofTabBarController-umbrella.h"
+
+  export *
+  module * { export * }
+}

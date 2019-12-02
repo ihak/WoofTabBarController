@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WoofTabBarItemView: UIView {
+public class WoofTabBarItemView: UIView {
 
     var item: WoofTabBarItem!
     
@@ -20,7 +20,7 @@ class WoofTabBarItemView: UIView {
     
     var delegate: WoofTabBarItemViewDelegate?
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         guard imageContainer.superview == nil else {
             return
         }
@@ -150,7 +150,7 @@ class WoofTabBarItemView: UIView {
         }
     }
 
-    override var intrinsicContentSize: CGSize {
+    override public var intrinsicContentSize: CGSize {
         CGSize(width: 50.0, height: 70.0)
     }
     
