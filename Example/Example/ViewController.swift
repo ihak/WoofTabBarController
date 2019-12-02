@@ -14,6 +14,14 @@ class ViewController: WoofTabBarControllerClass {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.configureTabBarView { (barview) in
+//            barview.backgroundColor = .green
+//            barview.bezierBackgroundColor = .orange
+//            barview.circleBackgroundColor = .cyan
+//            barview.bezieranimationDuration = 0.5
+//            barview.circleAnimationDuration = 1.5
+        }
     }
 
     override func viewControllers() -> [WoofTabBarViewDataSource] {

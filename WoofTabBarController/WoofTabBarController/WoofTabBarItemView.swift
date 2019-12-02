@@ -13,10 +13,18 @@ public class WoofTabBarItemView: UIView {
     var item: WoofTabBarItem!
     
     // contains the image and notification view
-    var imageContainer = UIView()
+    private var imageContainer = UIView()
     
     // circular view that highlights when item is selected
-    var backCircleView = UIView()
+    private var backCircleView = UIView()
+    
+    var circleBackgroundColor = UIColor.white {
+        didSet {
+            self.backCircleView.backgroundColor = circleBackgroundColor
+        }
+    }
+    
+    private var circleAnimationDuration = 0.2
     
     var delegate: WoofTabBarItemViewDelegate?
     
@@ -70,7 +78,6 @@ public class WoofTabBarItemView: UIView {
         ])
 
         backCircleView.translatesAutoresizingMaskIntoConstraints = false
-        backCircleView.backgroundColor = .white
         backCircleView.layer.cornerRadius = 20.0
         backCircleContainer.addSubview(backCircleView)
         NSLayoutConstraint.activate([
@@ -159,7 +166,7 @@ public class WoofTabBarItemView: UIView {
         view.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    private func animateContainerUp(duration: Double = 0.2) {
+    private func animateContainerUp(duration: Double) {
         UIView.animate(withDuration: duration, animations: {
             var t = CGAffineTransform.identity
             t = t.translatedBy(x: 0.0, y: -20.0)
@@ -176,7 +183,7 @@ public class WoofTabBarItemView: UIView {
         }
     }
     
-    private func animateContainerBack(duration: Double = 0.2) {
+    private func animateContainerBack(duration: Double) {
         UIView.animate(withDuration: duration, animations: {
             self.imageContainer.transform = .identity
             self.backCircleView.transform = .identity
@@ -186,13 +193,13 @@ public class WoofTabBarItemView: UIView {
     
     @objc private func handleTap() {
         guard let delegate = self.delegate else {
-            animateContainerUp()
+            animateContainerUp(duration: circleAnimationDuration)
             return
         }
         
         if delegate.shouldTap(itemView: self) {
             if delegate.shouldAnimate(itemView: self) {
-                animateContainerUp()
+                animateContainerUp(duration: circleAnimationDuration)
             }
             else {
                 animateContainerUp(duration: 0.0)
@@ -207,7 +214,7 @@ public class WoofTabBarItemView: UIView {
             animateContainerBack(duration: 0.0)
         }
         else {
-            animateContainerBack()
+            animateContainerBack(duration: circleAnimationDuration)
         }
     }
     
@@ -216,8 +223,12 @@ public class WoofTabBarItemView: UIView {
             animateContainerUp(duration: 0.0)
         }
         else {
-            animateContainerUp()
+            animateContainerUp(duration: circleAnimationDuration)
         }
+    }
+    
+    func circleAnimationDuration(duration: Double) {
+        circleAnimationDuration = duration
     }
 }
 
