@@ -18,9 +18,27 @@ public class WoofTabBarItemView: UIView {
     // circular view that highlights when item is selected
     private var backCircleView = UIView()
     
+    // circular notification bubble view
+    private var notificationBubbleContainer = UIView()
+    
+    // notification bubble textlabel
+    private var notificationBubbleLabel = UILabel()
+    
     var circleBackgroundColor = UIColor.white {
         didSet {
             self.backCircleView.backgroundColor = circleBackgroundColor
+        }
+    }
+    
+    var notificationBubbleBackgroundClor = UIColor.orange {
+        didSet {
+            self.notificationBubbleContainer.backgroundColor = notificationBubbleBackgroundClor
+        }
+    }
+    
+    var notificationTextColor = UIColor.white {
+        didSet {
+            self.notificationBubbleLabel.textColor = notificationTextColor
         }
     }
     
@@ -117,10 +135,9 @@ public class WoofTabBarItemView: UIView {
             label.topAnchor.constraint(equalTo: imageContainer.bottomAnchor)
         ])
         
-        let notificationBubbleContainer = UIView()
         notificationBubbleContainer.translatesAutoresizingMaskIntoConstraints = false
         notificationBubbleContainer.layer.cornerRadius = 10
-        notificationBubbleContainer.backgroundColor = .orange
+        notificationBubbleContainer.backgroundColor = self.notificationBubbleBackgroundClor
         
         imageContainer.addSubview(notificationBubbleContainer)
         NSLayoutConstraint.activate([
@@ -129,11 +146,9 @@ public class WoofTabBarItemView: UIView {
             notificationBubbleContainer.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 5.0),
             notificationBubbleContainer.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: -20.0)
         ])
-        
-        
-        let notificationBubbleLabel = UILabel()
+                
         notificationBubbleLabel.textAlignment = .center
-        notificationBubbleLabel.textColor = .white
+        notificationBubbleLabel.textColor = self.notificationTextColor
         notificationBubbleLabel.font = .boldSystemFont(ofSize: 9)
         notificationBubbleLabel.adjustsFontSizeToFitWidth = true
         notificationBubbleLabel.text = item.count
