@@ -72,6 +72,7 @@ public class WoofTabBarView: UIView {
         
         bezierView.shapeBackgroundColor(color: bezierBackgroundColor)
         bezierView.animationDuration(duration: bezieranimationDuration)
+        bezierView.shadow = true
         
         bezierView.translatesAutoresizingMaskIntoConstraints = false
         self.insertSubview(bezierView, belowSubview: stackView)

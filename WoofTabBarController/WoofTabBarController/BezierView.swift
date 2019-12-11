@@ -16,11 +16,20 @@ class BezierView: UIView {
     private var shapeBackgroundColor = UIColor.white.cgColor
     private var animationDuration = 0.15
     
+    var shadow = true
+    
     func addShapeLayer() {
         shapeLayer.path = curveShapePath(postion: initialPosition)
         shapeLayer.strokeColor = UIColor.clear.cgColor
         shapeLayer.fillColor = shapeBackgroundColor
         self.layer.addSublayer(shapeLayer)
+        
+        if shadow {
+            shapeLayer.shadowRadius = 5.0
+            shapeLayer.shadowColor = UIColor.red.cgColor
+            shapeLayer.shadowOffset = CGSize(width: 0, height: 0)
+            shapeLayer.shadowOpacity = 0.8
+        }
     }
     
     private func curveShapePath(postion: CGFloat) -> CGPath {
