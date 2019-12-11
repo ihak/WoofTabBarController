@@ -22,6 +22,7 @@ public class WoofTabBarView: UIView {
     public var notificationBubbleColor: UIColor = .orange
     public var notificationTextColor: UIColor = .white
     
+    public var imageTint: UIColor?
     public var bezieranimationDuration = 0.15
     public var circleAnimationDuration = 0.2
     
@@ -53,6 +54,7 @@ public class WoofTabBarView: UIView {
             barItemView.circleBackgroundColor = self.circleBackgroundColor
             barItemView.circleAnimationDuration(duration: self.circleAnimationDuration)
             barItemView.item = item
+            barItemView.imageTintColor = self.imageTint
             barItemView.delegate = self
             
             barItemView.notificationTextColor = self.notificationTextColor

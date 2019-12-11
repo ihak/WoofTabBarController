@@ -15,6 +15,9 @@ public class WoofTabBarItemView: UIView {
     // contains the image and notification view
     private var imageContainer = UIView()
     
+    // icon image
+    private var imageView = UIImageView()
+    
     // circular view that highlights when item is selected
     private var backCircleView = UIView()
     
@@ -39,6 +42,12 @@ public class WoofTabBarItemView: UIView {
     var notificationTextColor = UIColor.white {
         didSet {
             self.notificationBubbleLabel.textColor = notificationTextColor
+        }
+    }
+    
+    var imageTintColor: UIColor? {
+        didSet {
+            applyTint(color: imageTintColor)
         }
     }
     
@@ -105,19 +114,20 @@ public class WoofTabBarItemView: UIView {
             backCircleView.heightAnchor.constraint(equalToConstant: 40)
         ])
 
-        let image = UIImageView(image: UIImage(named: item.image))
-        image.contentMode = .scaleAspectFit
-        image.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
-        image.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
-        
-        image.translatesAutoresizingMaskIntoConstraints = false
-        imageContainer.addSubview(image)
+        imageView = UIImageView(image: UIImage(named: item.image))
+        imageView.contentMode = .scaleAspectFit
+        imageView.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
+        imageView.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        applyTint(color: self.imageTintColor)
+
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageContainer.addSubview(imageView)
         
         NSLayoutConstraint.activate([
-            image.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 5.0),
-            image.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: -5.0),
-            image.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor, constant: 5.0),
-            image.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: -5.0)
+            imageView.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 5.0),
+            imageView.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: -5.0),
+            imageView.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor, constant: 5.0),
+            imageView.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: -5.0)
         ])
         
         let label = UILabel()
@@ -144,7 +154,7 @@ public class WoofTabBarItemView: UIView {
             notificationBubbleContainer.heightAnchor.constraint(equalToConstant: 20.0),
             notificationBubbleContainer.widthAnchor.constraint(equalToConstant: 20.0),
             notificationBubbleContainer.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 5.0),
-            notificationBubbleContainer.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: -20.0)
+            notificationBubbleContainer.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -20.0)
         ])
                 
         notificationBubbleLabel.textAlignment = .center
@@ -174,6 +184,13 @@ public class WoofTabBarItemView: UIView {
 
     override public var intrinsicContentSize: CGSize {
         CGSize(width: 50.0, height: 70.0)
+    }
+    
+    private func applyTint(color: UIColor?) {
+        if let color = color, item != nil {
+            self.imageView.image = UIImage(named: item.image)?.withRenderingMode(.alwaysTemplate)
+            self.imageView.tintColor = color
+        }
     }
     
     private func addTapGesture(view: UIView) {

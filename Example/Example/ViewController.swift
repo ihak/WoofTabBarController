@@ -21,6 +21,7 @@ class ViewController: WoofTabBarControllerClass {
 //            barview.circleBackgroundColor = .cyan
 //            barview.bezieranimationDuration = 0.5
 //            barview.circleAnimationDuration = 1.5
+//            barview.imageTint = .green
         }
     }
 
@@ -31,7 +32,7 @@ class ViewController: WoofTabBarControllerClass {
 
 class Tab1Controller: UIViewController, WoofTabBarViewDataSource {
     override func viewDidLoad() {
-        self.view.backgroundColor = .random
+        self.view.backgroundColor = .white
     }
 
     func woofTabBarItem() -> WoofTabBarItem {
@@ -41,7 +42,7 @@ class Tab1Controller: UIViewController, WoofTabBarViewDataSource {
 
 class Tab2Controller: UIViewController, WoofTabBarViewDataSource {
     override func viewDidLoad() {
-        self.view.backgroundColor = .random
+        self.view.backgroundColor = .white
     }
     
     func woofTabBarItem() -> WoofTabBarItem {
@@ -51,7 +52,7 @@ class Tab2Controller: UIViewController, WoofTabBarViewDataSource {
 
 class Tab3Controller: UIViewController, WoofTabBarViewDataSource {
     override func viewDidLoad() {
-        self.view.backgroundColor = .random
+        self.view.backgroundColor = .white
     }
 
     func woofTabBarItem() -> WoofTabBarItem {
@@ -61,7 +62,7 @@ class Tab3Controller: UIViewController, WoofTabBarViewDataSource {
 
 class Tab4Controller: UIViewController, WoofTabBarViewDataSource {
     override func viewDidLoad() {
-        self.view.backgroundColor = .random
+        self.view.backgroundColor = .white
     }
 
     func woofTabBarItem() -> WoofTabBarItem {
@@ -71,7 +72,7 @@ class Tab4Controller: UIViewController, WoofTabBarViewDataSource {
 
 class Tab5Controller: UIViewController, WoofTabBarViewDataSource {
     override func viewDidLoad() {
-        self.view.backgroundColor = .random
+        self.view.backgroundColor = .white
     }
 
     func woofTabBarItem() -> WoofTabBarItem {
