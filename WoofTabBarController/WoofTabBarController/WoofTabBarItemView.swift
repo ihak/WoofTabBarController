@@ -226,11 +226,13 @@ public class WoofTabBarItemView: UIView {
     }
     
     @objc private func handleTap() {
+        // if no delegate is present, select by default
         guard let delegate = self.delegate else {
             animateContainerUp(duration: circleAnimationDuration)
             return
         }
         
+        // else ask the delegate
         if delegate.shouldTap(itemView: self) {
             if delegate.shouldAnimate(itemView: self) {
                 animateContainerUp(duration: circleAnimationDuration)

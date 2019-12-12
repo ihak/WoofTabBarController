@@ -14,7 +14,7 @@ open class WoofTabBarControllerClass: UIViewController {
     var tabBarView: WoofTabBarView!
     var currentTabVC: UIViewController!
     var tabContainerView = UIView()
-    
+        
     override open func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -68,6 +68,15 @@ open class WoofTabBarControllerClass: UIViewController {
         let vc = self.tabViewControllers[index]
         let view = vc.view!
 
+        // Don't remove previous VC if new VC is an overlay
+        if (vc.addAsAnOverlay() == false) && currentTabVC != nil {
+            currentTabVC.willMove(toParent: nil)
+            currentTabVC.view.removeFromSuperview()
+            currentTabVC.removeFromParent()
+            self.currentTabVC = nil
+        }
+        
+        self.addChild(vc)
         view.translatesAutoresizingMaskIntoConstraints = false
         tabContainerView.addSubview(view)
         NSLayoutConstraint.activate([
@@ -83,6 +92,16 @@ open class WoofTabBarControllerClass: UIViewController {
 
 public protocol WoofTabBarViewDataSource: UIViewController {
     func woofTabBarItem() -> WoofTabBarItem
+    
+    // If true, previous VC is not removed before adding
+    // this VC.
+    func addAsAnOverlay() -> Bool
+}
+
+public extension WoofTabBarViewDataSource {    
+    func addAsAnOverlay() -> Bool {
+        return false
+    }
 }
 
 class WoofTab1Controller: UIViewController, WoofTabBarViewDataSource {

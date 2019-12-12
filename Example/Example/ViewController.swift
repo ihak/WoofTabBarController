@@ -34,8 +34,26 @@ class ViewController: WoofTabBarControllerClass {
 class Tab1Controller: UIViewController, WoofTabBarViewDataSource {
     override func viewDidLoad() {
         self.view.backgroundColor = .white
+        
+        print("\(String(describing: type(of: self)))->\(#function) called ")
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
     func woofTabBarItem() -> WoofTabBarItem {
         return WoofTabBarItem(title: "Home", image: "home")
     }
@@ -44,8 +62,25 @@ class Tab1Controller: UIViewController, WoofTabBarViewDataSource {
 class Tab2Controller: UIViewController, WoofTabBarViewDataSource {
     override func viewDidLoad() {
         self.view.backgroundColor = .random
+        print("\(String(describing: type(of: self)))->\(#function) called ")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+
     func woofTabBarItem() -> WoofTabBarItem {
         return WoofTabBarItem(title: "Favorites", image: "heart")
     }
@@ -54,6 +89,23 @@ class Tab2Controller: UIViewController, WoofTabBarViewDataSource {
 class Tab3Controller: UIViewController, WoofTabBarViewDataSource {
     override func viewDidLoad() {
         self.view.backgroundColor = .random
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
     }
 
     func woofTabBarItem() -> WoofTabBarItem {
@@ -63,17 +115,56 @@ class Tab3Controller: UIViewController, WoofTabBarViewDataSource {
 
 class Tab4Controller: UIViewController, WoofTabBarViewDataSource {
     override func viewDidLoad() {
-        self.view.backgroundColor = .random
+        self.view.backgroundColor = .white
+        self.view.alpha = 0.5
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
     }
 
     func woofTabBarItem() -> WoofTabBarItem {
         return WoofTabBarItem(title: "Like", image: "like")
+    }
+    
+    func addAsAnOverlay() -> Bool {
+        return true
     }
 }
 
 class Tab5Controller: UIViewController, WoofTabBarViewDataSource {
     override func viewDidLoad() {
         self.view.backgroundColor = .random
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("\(String(describing: type(of: self)))->\(#function) called ")
     }
 
     func woofTabBarItem() -> WoofTabBarItem {
