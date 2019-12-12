@@ -69,7 +69,7 @@ open class WoofTabBarControllerClass: UIViewController {
         let view = vc.view!
 
         // Don't remove previous VC if new VC is an overlay
-        if (vc.addAsAnOverlay() == false) && currentTabVC != nil {
+        if (vc.addsAsAnOverlay == false) && currentTabVC != nil {
             currentTabVC.willMove(toParent: nil)
             currentTabVC.view.removeFromSuperview()
             currentTabVC.removeFromParent()
@@ -95,16 +95,16 @@ public protocol WoofTabBarViewDataSource: UIViewController {
     
     // If true, previous VC is not removed before adding
     // this VC.
-    func addAsAnOverlay() -> Bool
+    var addsAsAnOverlay: Bool { get }
 }
 
-public extension WoofTabBarViewDataSource {    
-    func addAsAnOverlay() -> Bool {
+public extension WoofTabBarViewDataSource {
+    var addsAsAnOverlay: Bool {
         return false
     }
 }
 
-class WoofTab1Controller: UIViewController, WoofTabBarViewDataSource {
+class WoofTab1Controller: UIViewController, WoofTabBarViewDataSource {    
     func woofTabBarItem() -> WoofTabBarItem {
         return WoofTabBarItem(title: "Tab 1", image: "")
     }

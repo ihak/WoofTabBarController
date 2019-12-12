@@ -114,6 +114,10 @@ class Tab3Controller: UIViewController, WoofTabBarViewDataSource {
 }
 
 class Tab4Controller: UIViewController, WoofTabBarViewDataSource {
+    var addsAsAnOverlay: Bool {
+        return true
+    }
+
     override func viewDidLoad() {
         self.view.backgroundColor = .white
         self.view.alpha = 0.5
@@ -138,10 +142,6 @@ class Tab4Controller: UIViewController, WoofTabBarViewDataSource {
 
     func woofTabBarItem() -> WoofTabBarItem {
         return WoofTabBarItem(title: "Like", image: "like")
-    }
-    
-    func addAsAnOverlay() -> Bool {
-        return true
     }
 }
 
