@@ -93,7 +93,7 @@ public class WoofTabBarItemView: UIView {
         // circle container view - hides the circle view when its below the bar
         // by cliping bounds.
         let backCircleContainer = UIView()
-        backCircleContainer.clipsToBounds = true
+        backCircleContainer.clipsToBounds = false
         backCircleContainer.translatesAutoresizingMaskIntoConstraints = false
         backCircleContainer.backgroundColor = .clear
         containerView.insertSubview(backCircleContainer, belowSubview: imageContainer)
@@ -106,6 +106,8 @@ public class WoofTabBarItemView: UIView {
 
         backCircleView.translatesAutoresizingMaskIntoConstraints = false
         backCircleView.layer.cornerRadius = 20.0
+        backCircleView.alpha = 0.0
+        
         backCircleContainer.addSubview(backCircleView)
         NSLayoutConstraint.activate([
             backCircleView.topAnchor.constraint(equalTo: backCircleContainer.bottomAnchor),
@@ -261,6 +263,13 @@ public class WoofTabBarItemView: UIView {
     
     func circleAnimationDuration(duration: Double) {
         circleAnimationDuration = duration
+    }
+    
+    func shadow(opacity: Double = 0.0, radius: Double = 0.0, offset: CGSize = .zero, color: UIColor = .clear) {
+        backCircleView.layer.shadowRadius = CGFloat(radius)
+        backCircleView.layer.shadowOffset = offset
+        backCircleView.layer.shadowColor = color.cgColor
+        backCircleView.layer.shadowOpacity = Float(opacity)
     }
 }
 

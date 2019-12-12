@@ -26,6 +26,13 @@ public class WoofTabBarView: UIView {
     public var bezieranimationDuration = 0.15
     public var circleAnimationDuration = 0.2
     
+    public typealias offset = CGSize
+    public typealias radius = Double
+    public typealias opacity = Double
+    public typealias color = UIColor
+    
+    public var shadow: (radius, opacity, offset, color)?
+    
     var selectedIndex = -1 {
         didSet {
             guard oldValue > -1 else {
@@ -56,7 +63,9 @@ public class WoofTabBarView: UIView {
             barItemView.item = item
             barItemView.imageTintColor = self.imageTint
             barItemView.delegate = self
-            
+            if let shadow = self.shadow {
+                barItemView.shadow(opacity: shadow.1, radius: shadow.0, offset: shadow.2, color: shadow.3)
+            }
             barItemView.notificationTextColor = self.notificationTextColor
             barItemView.notificationBubbleBackgroundClor = self.notificationBubbleColor
             stackView.addArrangedSubview(barItemView)            
@@ -72,7 +81,9 @@ public class WoofTabBarView: UIView {
         
         bezierView.shapeBackgroundColor(color: bezierBackgroundColor)
         bezierView.animationDuration(duration: bezieranimationDuration)
-        bezierView.shadow = true
+        if let shadow = self.shadow {
+            bezierView.shadow(opacity: shadow.1, radius: shadow.0, offset: shadow.2, color: shadow.3)
+        }
         
         bezierView.translatesAutoresizingMaskIntoConstraints = false
         self.insertSubview(bezierView, belowSubview: stackView)
