@@ -14,6 +14,16 @@ class ViewController: WoofTabBarControllerClass {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.configureTabBarView { (barview) in
+//            barview.backgroundColor = .green
+//            barview.bezierBackgroundColor = .orange
+//            barview.circleBackgroundColor = .cyan
+//            barview.bezieranimationDuration = 0.5
+//            barview.circleAnimationDuration = 1.5
+//            barview.imageTint = .green
+//            barview.shadow = (3.0, 0.5, .zero, .gray)
+        }
     }
 
     override func viewControllers() -> [WoofTabBarViewDataSource] {
@@ -23,7 +33,7 @@ class ViewController: WoofTabBarControllerClass {
 
 class Tab1Controller: UIViewController, WoofTabBarViewDataSource {
     override func viewDidLoad() {
-        self.view.backgroundColor = .random
+        self.view.backgroundColor = .white
     }
 
     func woofTabBarItem() -> WoofTabBarItem {

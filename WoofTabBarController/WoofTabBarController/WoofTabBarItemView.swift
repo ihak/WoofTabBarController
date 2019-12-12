@@ -13,10 +13,45 @@ public class WoofTabBarItemView: UIView {
     var item: WoofTabBarItem!
     
     // contains the image and notification view
-    var imageContainer = UIView()
+    private var imageContainer = UIView()
+    
+    // icon image
+    private var imageView = UIImageView()
     
     // circular view that highlights when item is selected
-    var backCircleView = UIView()
+    private var backCircleView = UIView()
+    
+    // circular notification bubble view
+    private var notificationBubbleContainer = UIView()
+    
+    // notification bubble textlabel
+    private var notificationBubbleLabel = UILabel()
+    
+    var circleBackgroundColor = UIColor.white {
+        didSet {
+            self.backCircleView.backgroundColor = circleBackgroundColor
+        }
+    }
+    
+    var notificationBubbleBackgroundClor = UIColor.orange {
+        didSet {
+            self.notificationBubbleContainer.backgroundColor = notificationBubbleBackgroundClor
+        }
+    }
+    
+    var notificationTextColor = UIColor.white {
+        didSet {
+            self.notificationBubbleLabel.textColor = notificationTextColor
+        }
+    }
+    
+    var imageTintColor: UIColor? {
+        didSet {
+            applyTint(color: imageTintColor)
+        }
+    }
+    
+    private var circleAnimationDuration = 0.2
     
     var delegate: WoofTabBarItemViewDelegate?
     
@@ -58,7 +93,7 @@ public class WoofTabBarItemView: UIView {
         // circle container view - hides the circle view when its below the bar
         // by cliping bounds.
         let backCircleContainer = UIView()
-        backCircleContainer.clipsToBounds = true
+        backCircleContainer.clipsToBounds = false
         backCircleContainer.translatesAutoresizingMaskIntoConstraints = false
         backCircleContainer.backgroundColor = .clear
         containerView.insertSubview(backCircleContainer, belowSubview: imageContainer)
@@ -70,8 +105,9 @@ public class WoofTabBarItemView: UIView {
         ])
 
         backCircleView.translatesAutoresizingMaskIntoConstraints = false
-        backCircleView.backgroundColor = .white
         backCircleView.layer.cornerRadius = 20.0
+        backCircleView.alpha = 0.0
+        
         backCircleContainer.addSubview(backCircleView)
         NSLayoutConstraint.activate([
             backCircleView.topAnchor.constraint(equalTo: backCircleContainer.bottomAnchor),
@@ -80,19 +116,20 @@ public class WoofTabBarItemView: UIView {
             backCircleView.heightAnchor.constraint(equalToConstant: 40)
         ])
 
-        let image = UIImageView(image: UIImage(named: item.image))
-        image.contentMode = .scaleAspectFit
-        image.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
-        image.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
-        
-        image.translatesAutoresizingMaskIntoConstraints = false
-        imageContainer.addSubview(image)
+        imageView = UIImageView(image: UIImage(named: item.image))
+        imageView.contentMode = .scaleAspectFit
+        imageView.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
+        imageView.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        applyTint(color: self.imageTintColor)
+
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageContainer.addSubview(imageView)
         
         NSLayoutConstraint.activate([
-            image.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 5.0),
-            image.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: -5.0),
-            image.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor, constant: 5.0),
-            image.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: -5.0)
+            imageView.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 5.0),
+            imageView.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: -5.0),
+            imageView.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor, constant: 5.0),
+            imageView.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: -5.0)
         ])
         
         let label = UILabel()
@@ -110,23 +147,20 @@ public class WoofTabBarItemView: UIView {
             label.topAnchor.constraint(equalTo: imageContainer.bottomAnchor)
         ])
         
-        let notificationBubbleContainer = UIView()
         notificationBubbleContainer.translatesAutoresizingMaskIntoConstraints = false
         notificationBubbleContainer.layer.cornerRadius = 10
-        notificationBubbleContainer.backgroundColor = .orange
+        notificationBubbleContainer.backgroundColor = self.notificationBubbleBackgroundClor
         
         imageContainer.addSubview(notificationBubbleContainer)
         NSLayoutConstraint.activate([
             notificationBubbleContainer.heightAnchor.constraint(equalToConstant: 20.0),
             notificationBubbleContainer.widthAnchor.constraint(equalToConstant: 20.0),
             notificationBubbleContainer.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 5.0),
-            notificationBubbleContainer.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: -20.0)
+            notificationBubbleContainer.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -20.0)
         ])
-        
-        
-        let notificationBubbleLabel = UILabel()
+                
         notificationBubbleLabel.textAlignment = .center
-        notificationBubbleLabel.textColor = .white
+        notificationBubbleLabel.textColor = self.notificationTextColor
         notificationBubbleLabel.font = .boldSystemFont(ofSize: 9)
         notificationBubbleLabel.adjustsFontSizeToFitWidth = true
         notificationBubbleLabel.text = item.count
@@ -154,12 +188,19 @@ public class WoofTabBarItemView: UIView {
         CGSize(width: 50.0, height: 70.0)
     }
     
+    private func applyTint(color: UIColor?) {
+        if let color = color, item != nil {
+            self.imageView.image = UIImage(named: item.image)?.withRenderingMode(.alwaysTemplate)
+            self.imageView.tintColor = color
+        }
+    }
+    
     private func addTapGesture(view: UIView) {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         view.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    private func animateContainerUp(duration: Double = 0.2) {
+    private func animateContainerUp(duration: Double) {
         UIView.animate(withDuration: duration, animations: {
             var t = CGAffineTransform.identity
             t = t.translatedBy(x: 0.0, y: -20.0)
@@ -176,7 +217,7 @@ public class WoofTabBarItemView: UIView {
         }
     }
     
-    private func animateContainerBack(duration: Double = 0.2) {
+    private func animateContainerBack(duration: Double) {
         UIView.animate(withDuration: duration, animations: {
             self.imageContainer.transform = .identity
             self.backCircleView.transform = .identity
@@ -186,13 +227,13 @@ public class WoofTabBarItemView: UIView {
     
     @objc private func handleTap() {
         guard let delegate = self.delegate else {
-            animateContainerUp()
+            animateContainerUp(duration: circleAnimationDuration)
             return
         }
         
         if delegate.shouldTap(itemView: self) {
             if delegate.shouldAnimate(itemView: self) {
-                animateContainerUp()
+                animateContainerUp(duration: circleAnimationDuration)
             }
             else {
                 animateContainerUp(duration: 0.0)
@@ -207,7 +248,7 @@ public class WoofTabBarItemView: UIView {
             animateContainerBack(duration: 0.0)
         }
         else {
-            animateContainerBack()
+            animateContainerBack(duration: circleAnimationDuration)
         }
     }
     
@@ -216,8 +257,19 @@ public class WoofTabBarItemView: UIView {
             animateContainerUp(duration: 0.0)
         }
         else {
-            animateContainerUp()
+            animateContainerUp(duration: circleAnimationDuration)
         }
+    }
+    
+    func circleAnimationDuration(duration: Double) {
+        circleAnimationDuration = duration
+    }
+    
+    func shadow(opacity: Double = 0.0, radius: Double = 0.0, offset: CGSize = .zero, color: UIColor = .clear) {
+        backCircleView.layer.shadowRadius = CGFloat(radius)
+        backCircleView.layer.shadowOffset = offset
+        backCircleView.layer.shadowColor = color.cgColor
+        backCircleView.layer.shadowOpacity = Float(opacity)
     }
 }
 
