@@ -91,16 +91,41 @@ open class WoofTabBarControllerClass: UIViewController {
 }
 
 public protocol WoofTabBarViewDataSource: UIViewController {
+    // Retrieves WoofTabBarItem object to draw the item view
     func woofTabBarItem() -> WoofTabBarItem
     
     // If true, previous VC is not removed before adding
     // this VC.
     var addsAsAnOverlay: Bool { get }
+    
 }
 
 public extension WoofTabBarViewDataSource {
     var addsAsAnOverlay: Bool {
         return false
+    }
+}
+
+public protocol WoofTabBarControllerDelegate: UIViewController {
+    func shouldAnimate(item: WoofTabBarItem) -> Bool
+    func shouldTap(at item: WoofTabBarItem) -> Bool
+    func didTap(at item: WoofTabBarItem)
+    func didAnimate(item: WoofTabBarItem)
+}
+
+public extension WoofTabBarControllerDelegate {
+    func shouldAnimate(item: WoofTabBarItem) -> Bool {
+        return true
+    }
+    
+    func shouldTap(at item: WoofTabBarItem) -> Bool {
+        return true
+    }
+    
+    func didTap(at item: WoofTabBarItem) {
+    }
+    
+    func didAnimate(item: WoofTabBarItem) {
     }
 }
 
