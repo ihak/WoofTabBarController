@@ -15,7 +15,7 @@ public class WoofTabBarView: UIView {
 
     let bezierView = BezierView()
     let stackView = UIStackView()
-    var defaultSelectedIndex = 0
+    var defaultSelectedIndex = 3
     
     public var bezierBackgroundColor: UIColor = .white
     public var circleBackgroundColor: UIColor = .white
@@ -178,18 +178,4 @@ extension UIColor {
                        blue: .random(in: 0...1),
                        alpha: 1.0)
     }
-}
-
-protocol WoofTabBarViewDelegate {
-    func shouldSelectItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool
-    func shouldAnimateItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool
-    func didSelectItem(itemView: WoofTabBarItemView, atIndex: Int)
-    func didAnimateItem(itemView: WoofTabBarItemView, atIndex: Int)
-}
-
-extension WoofTabBarViewDelegate {
-    func shouldSelectItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool { true }
-    func shouldAnimateItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool { true }
-    func didSelectItem(itemView: WoofTabBarItemView, atIndex: Int) {}
-    func didAnimateItem(itemView: WoofTabBarItemView, atIndex: Int) {}
 }

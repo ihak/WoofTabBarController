@@ -274,27 +274,3 @@ public class WoofTabBarItemView: UIView {
         backCircleView.layer.shadowOpacity = Float(opacity)
     }
 }
-
-protocol WoofTabBarItemViewDelegate {
-    func isDefaultItem(itemView: WoofTabBarItemView) -> Bool
-    func didTap(itemView: WoofTabBarItemView)
-    func shouldTap(itemView: WoofTabBarItemView) -> Bool
-    func shouldAnimate(itemView: WoofTabBarItemView) -> Bool
-    func didAnimate(itemView: WoofTabBarItemView)
-}
-
-extension WoofTabBarItemViewDelegate {
-    func didTap(itemView: WoofTabBarItemView) {
-    }
-    
-    func shouldTap(itemView: WoofTabBarItemView) -> Bool {
-        return true
-    }
-    
-    func shouldAnimate(itemView: WoofTabBarItemView) -> Bool {
-        return true
-    }
-    
-    func didAnimate(itemView: WoofTabBarItemView) {
-    }
-}

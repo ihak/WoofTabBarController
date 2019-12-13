@@ -8,19 +8,22 @@
 import Foundation
 
 public protocol WoofTabBarControllerDelegate: UIViewController {
-    func shouldAnimate(item: WoofTabBarItem) -> Bool
-    func shouldTap(at item: WoofTabBarItem) -> Bool
-    func didTap(at item: WoofTabBarItem)
-    func didAnimate(item: WoofTabBarItem)
+    func shouldAnimate() -> Bool
+    
+    func shouldSelect() -> Bool
+    
+    func didSelect()
+    
+    func didAnimate()
 }
 
 // Default implementation to mark protocol methods optional
 public extension WoofTabBarControllerDelegate {
-    func shouldAnimate(item: WoofTabBarItem) -> Bool { true }
+    func shouldAnimate() -> Bool { true }
     
-    func shouldTap(at item: WoofTabBarItem) -> Bool { true }
+    func shouldSelect() -> Bool { true }
     
-    func didTap(at item: WoofTabBarItem) {}
+    func didSelect() {}
     
-    func didAnimate(item: WoofTabBarItem) {}
+    func didAnimate() {}
 }

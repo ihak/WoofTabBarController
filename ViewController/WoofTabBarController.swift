@@ -9,12 +9,13 @@
 import UIKit
 
 open class WoofTabBarController: UIViewController {
-    private var tabViewControllers = [WoofTabBarControllerDataSource]()
+    public typealias WoofTabControllerItem = WoofTabBarControllerDataSource & WoofTabBarControllerDelegate
+    private var tabViewControllers = [WoofTabControllerItem]()
     
     var tabBarView: WoofTabBarView!
     var currentTabVC: UIViewController!
     var tabContainerView = UIView()
-        
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -56,7 +57,7 @@ open class WoofTabBarController: UIViewController {
         }
     }
     
-    open func viewControllers() -> [WoofTabBarControllerDataSource] {
+    open func viewControllers() -> [WoofTabControllerItem] {
         return [WoofTab1Controller(), WoofTab2Controller()]
     }
 
@@ -67,7 +68,7 @@ open class WoofTabBarController: UIViewController {
     func replaceTabVC(withTabVCAt index:Int) {
         let vc = self.tabViewControllers[index]
         let view = vc.view!
-
+        
         // Don't remove previous VC if new VC is an overlay
         if (vc.addsAsAnOverlay == false) && currentTabVC != nil {
             currentTabVC.willMove(toParent: nil)
@@ -95,16 +96,26 @@ extension WoofTabBarController: WoofTabBarViewDelegate {
         // replace previous vc with the new one
         replaceTabVC(withTabVCAt:atIndex)
     }
+    
+    func shouldSelectItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool {
+        let vc = self.tabViewControllers[atIndex]
+        return vc.shouldSelect()
+    }
+    
+    func shouldAnimateItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool {
+        let vc = self.tabViewControllers[atIndex]
+        return vc.shouldAnimate()
+    }
 }
 
 
-class WoofTab1Controller: UIViewController, WoofTabBarControllerDataSource {    
+class WoofTab1Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabBarControllerDelegate {
     func woofTabBarItem() -> WoofTabBarItem {
         return WoofTabBarItem(title: "Tab 1", image: "")
     }
 }
 
-class WoofTab2Controller: UIViewController, WoofTabBarControllerDataSource {
+class WoofTab2Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabBarControllerDelegate {
     func woofTabBarItem() -> WoofTabBarItem {
         return WoofTabBarItem(title: "Tab 2", image: "")
     }
