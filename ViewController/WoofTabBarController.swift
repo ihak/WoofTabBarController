@@ -8,8 +8,8 @@
 
 import UIKit
 
-open class WoofTabBarControllerClass: UIViewController {
-    private var tabViewControllers = [WoofTabBarViewDataSource]()
+open class WoofTabBarController: UIViewController {
+    private var tabViewControllers = [WoofTabBarControllerDataSource]()
     
     var tabBarView: WoofTabBarView!
     var currentTabVC: UIViewController!
@@ -56,7 +56,7 @@ open class WoofTabBarControllerClass: UIViewController {
         }
     }
     
-    open func viewControllers() -> [WoofTabBarViewDataSource] {
+    open func viewControllers() -> [WoofTabBarControllerDataSource] {
         return [WoofTab1Controller(), WoofTab2Controller()]
     }
 
@@ -90,60 +90,22 @@ open class WoofTabBarControllerClass: UIViewController {
     }
 }
 
-public protocol WoofTabBarViewDataSource: UIViewController {
-    // Retrieves WoofTabBarItem object to draw the item view
-    func woofTabBarItem() -> WoofTabBarItem
-    
-    // If true, previous VC is not removed before adding
-    // this VC.
-    var addsAsAnOverlay: Bool { get }
-    
-}
-
-public extension WoofTabBarViewDataSource {
-    var addsAsAnOverlay: Bool {
-        return false
+extension WoofTabBarController: WoofTabBarViewDelegate {
+    func didSelectItem(itemView: WoofTabBarItemView, atIndex: Int) {
+        // replace previous vc with the new one
+        replaceTabVC(withTabVCAt:atIndex)
     }
 }
 
-public protocol WoofTabBarControllerDelegate: UIViewController {
-    func shouldAnimate(item: WoofTabBarItem) -> Bool
-    func shouldTap(at item: WoofTabBarItem) -> Bool
-    func didTap(at item: WoofTabBarItem)
-    func didAnimate(item: WoofTabBarItem)
-}
 
-public extension WoofTabBarControllerDelegate {
-    func shouldAnimate(item: WoofTabBarItem) -> Bool {
-        return true
-    }
-    
-    func shouldTap(at item: WoofTabBarItem) -> Bool {
-        return true
-    }
-    
-    func didTap(at item: WoofTabBarItem) {
-    }
-    
-    func didAnimate(item: WoofTabBarItem) {
-    }
-}
-
-class WoofTab1Controller: UIViewController, WoofTabBarViewDataSource {    
+class WoofTab1Controller: UIViewController, WoofTabBarControllerDataSource {    
     func woofTabBarItem() -> WoofTabBarItem {
         return WoofTabBarItem(title: "Tab 1", image: "")
     }
 }
 
-class WoofTab2Controller: UIViewController, WoofTabBarViewDataSource {
+class WoofTab2Controller: UIViewController, WoofTabBarControllerDataSource {
     func woofTabBarItem() -> WoofTabBarItem {
         return WoofTabBarItem(title: "Tab 2", image: "")
-    }
-}
-
-extension WoofTabBarControllerClass: WoofTabBarViewDelegate {
-    func didSelectItem(itemView: WoofTabBarItemView, atIndex: Int) {
-        // replace previous vc with the new one
-        replaceTabVC(withTabVCAt:atIndex) 
     }
 }

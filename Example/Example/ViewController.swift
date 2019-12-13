@@ -9,7 +9,7 @@
 import UIKit
 import WoofTabBarController
 
-class ViewController: WoofTabBarControllerClass {
+class ViewController: WoofTabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +26,12 @@ class ViewController: WoofTabBarControllerClass {
         }
     }
 
-    override func viewControllers() -> [WoofTabBarViewDataSource] {
+    override func viewControllers() -> [WoofTabControllerItem] {
         return [Tab1Controller(), Tab2Controller(), Tab3Controller(), Tab4Controller(), Tab5Controller()]
     }
 }
 
-class Tab1Controller: UIViewController, WoofTabBarViewDataSource {
+class Tab1Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabBarControllerDelegate {
     override func viewDidLoad() {
         self.view.backgroundColor = .white
         
@@ -59,7 +59,7 @@ class Tab1Controller: UIViewController, WoofTabBarViewDataSource {
     }
 }
 
-class Tab2Controller: UIViewController, WoofTabBarViewDataSource {
+class Tab2Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabBarControllerDelegate {
     override func viewDidLoad() {
         self.view.backgroundColor = .random
         print("\(String(describing: type(of: self)))->\(#function) called ")
@@ -84,9 +84,13 @@ class Tab2Controller: UIViewController, WoofTabBarViewDataSource {
     func woofTabBarItem() -> WoofTabBarItem {
         return WoofTabBarItem(title: "Favorites", image: "heart")
     }
+    
+    func shouldAnimate() -> Bool {
+        return false
+    }
 }
 
-class Tab3Controller: UIViewController, WoofTabBarViewDataSource {
+class Tab3Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabBarControllerDelegate {
     override func viewDidLoad() {
         self.view.backgroundColor = .random
         print("\(String(describing: type(of: self)))->\(#function) called ")
@@ -113,7 +117,7 @@ class Tab3Controller: UIViewController, WoofTabBarViewDataSource {
     }
 }
 
-class Tab4Controller: UIViewController, WoofTabBarViewDataSource {
+class Tab4Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabBarControllerDelegate {
     var addsAsAnOverlay: Bool {
         return true
     }
@@ -143,9 +147,17 @@ class Tab4Controller: UIViewController, WoofTabBarViewDataSource {
     func woofTabBarItem() -> WoofTabBarItem {
         return WoofTabBarItem(title: "Like", image: "like")
     }
+    
+    func shouldSelect() -> Bool {
+        return false
+    }
+    
+    func shouldAnimate() -> Bool {
+        return false
+    }
 }
 
-class Tab5Controller: UIViewController, WoofTabBarViewDataSource {
+class Tab5Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabBarControllerDelegate {
     override func viewDidLoad() {
         self.view.backgroundColor = .random
         print("\(String(describing: type(of: self)))->\(#function) called ")

@@ -119,6 +119,10 @@ public class WoofTabBarView: UIView {
     private func changeCurveShape(position: CGPoint) {
         bezierView.moveCurve(to: position.x)
     }
+    
+    private func indexOfItemView(itemView: WoofTabBarItemView) -> Int? {
+        return self.stackView.arrangedSubviews.firstIndex(of: itemView)
+    }
 }
 
 extension WoofTabBarView: WoofTabBarItemViewDelegate {
@@ -134,8 +138,22 @@ extension WoofTabBarView: WoofTabBarItemViewDelegate {
         return false
     }
     
+    func shouldTap(itemView: WoofTabBarItemView) -> Bool {
+        if let index = indexOfItemView(itemView: itemView), let delegate = self.delegate {
+            return delegate.shouldSelectItem(itemView: itemView, atIndex: index)
+        }
+        return true
+    }
+    
+    func shouldAnimate(itemView: WoofTabBarItemView) -> Bool {
+        if let index = indexOfItemView(itemView: itemView), let delegate = self.delegate {
+            return delegate.shouldAnimateItem(itemView: itemView, atIndex: index)
+        }
+        return true
+    }
+    
     func didTap(itemView: WoofTabBarItemView) {
-        if let index = self.stackView.arrangedSubviews.firstIndex(of: itemView) {
+        if let index = indexOfItemView(itemView: itemView) {
             guard index != selectedIndex else {
                 return
             }
@@ -143,6 +161,12 @@ extension WoofTabBarView: WoofTabBarItemViewDelegate {
             self.selectedIndex = index
             print("selected index", selectedIndex)
             self.delegate?.didSelectItem(itemView: itemView, atIndex: index)
+        }
+    }
+    
+    func didAnimate(itemView: WoofTabBarItemView) {
+        if let index = indexOfItemView(itemView: itemView) {
+            delegate?.didAnimateItem(itemView: itemView, atIndex: index)
         }
     }
 }
@@ -164,14 +188,8 @@ protocol WoofTabBarViewDelegate {
 }
 
 extension WoofTabBarViewDelegate {
-    func shouldSelectItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool {
-        return true
-    }
-    
-    func shouldAnimateItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool {
-        return true
-    }
-    
+    func shouldSelectItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool { true }
+    func shouldAnimateItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool { true }
     func didSelectItem(itemView: WoofTabBarItemView, atIndex: Int) {}
     func didAnimateItem(itemView: WoofTabBarItemView, atIndex: Int) {}
 }

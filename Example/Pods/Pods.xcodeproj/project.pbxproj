@@ -16,7 +16,11 @@
 		A2DD8BE3375D736152CB491C08A4C83D /* WoofTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFCFC6D06A71853AD0F4572E32A531C /* WoofTabBarView.swift */; };
 		BB56BCEC5966E1005F9E82F2F0EF30B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		D7FC99D8F6AA4ECC56D9545B84B87276 /* Pods-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D7C498FA339E02BD53ECB8916CEA8E /* Pods-Example-dummy.m */; };
-		FA2C4A1E64143E1EC67AC653F849918E /* WoofTabBarControllerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C455A9E1F4C39FA2E4FBDC4DD8E44AD6 /* WoofTabBarControllerClass.swift */; };
+		E4226B4623A36B1A00405386 /* WoofTabBarControllerClass+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4226B4523A36B1A00405386 /* WoofTabBarControllerClass+DataSource.swift */; };
+		E4226B4823A36BA200405386 /* WoofTabBarControllerClass+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4226B4723A36BA200405386 /* WoofTabBarControllerClass+Delegate.swift */; };
+		E4226B4C23A36E4800405386 /* WoofTabBarView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4226B4B23A36E4800405386 /* WoofTabBarView+Delegate.swift */; };
+		E4226B4E23A36F1500405386 /* WoofTabBarItemView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4226B4D23A36F1500405386 /* WoofTabBarItemView+Delegate.swift */; };
+		FA2C4A1E64143E1EC67AC653F849918E /* WoofTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C455A9E1F4C39FA2E4FBDC4DD8E44AD6 /* WoofTabBarController.swift */; };
 		FC0D79EDBB47BE5911AC59FF4CC84555 /* WoofTabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3BC8DA061E1FED1F93133EAB52A186 /* WoofTabBarItemView.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1628D4FFC8A7E013DC728B99557A8D47 /* WoofTabBarController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WoofTabBarController.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1628D4FFC8A7E013DC728B99557A8D47 /* WoofTabBarController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = WoofTabBarController.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1B1F683538074F11E43A12770AABCBB9 /* WoofTabBarController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WoofTabBarController-umbrella.h"; sourceTree = "<group>"; };
 		243410B9535472556EA4BB6DBC133A0D /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		31C1D37707DFAA5E6A164BCC07834264 /* Pods-Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-Info.plist"; sourceTree = "<group>"; };
@@ -39,24 +43,28 @@
 		34FBF2756902E606448A43487ADD698F /* WoofTabBarController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WoofTabBarController-prefix.pch"; sourceTree = "<group>"; };
 		35C305D3797C284E6F5BAA1D3E6F9BF8 /* Pods-Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Example.modulemap"; sourceTree = "<group>"; };
 		441854E35F81731E63E53DC7E4EEAD9D /* Pods-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4945608CD84A19A22A3DBC09B8EF1952 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		4E9DEADC836AC8CC02BCDAA52260ACBA /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Example.framework; path = "Pods-Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4945608CD84A19A22A3DBC09B8EF1952 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		4E9DEADC836AC8CC02BCDAA52260ACBA /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7825A90E082A1582EB16256B0E722B3F /* Pods-Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example-umbrella.h"; sourceTree = "<group>"; };
-		78FCFE7771244806EB950DF161506BC0 /* WoofTabBarItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WoofTabBarItem.swift; path = WoofTabBarController/WoofTabBarController/WoofTabBarItem.swift; sourceTree = "<group>"; };
-		899F002DC03ECFC92C1AB1DCF29A01A0 /* BezierView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BezierView.swift; path = WoofTabBarController/WoofTabBarController/BezierView.swift; sourceTree = "<group>"; };
-		8FFCFC6D06A71853AD0F4572E32A531C /* WoofTabBarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WoofTabBarView.swift; path = WoofTabBarController/WoofTabBarController/WoofTabBarView.swift; sourceTree = "<group>"; };
-		9D5B6EE826697563EEF24BC517C5D3E1 /* WoofTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WoofTabBarController.framework; path = WoofTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AE3BC8DA061E1FED1F93133EAB52A186 /* WoofTabBarItemView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WoofTabBarItemView.swift; path = WoofTabBarController/WoofTabBarController/WoofTabBarItemView.swift; sourceTree = "<group>"; };
+		78FCFE7771244806EB950DF161506BC0 /* WoofTabBarItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WoofTabBarItem.swift; sourceTree = "<group>"; };
+		899F002DC03ECFC92C1AB1DCF29A01A0 /* BezierView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BezierView.swift; sourceTree = "<group>"; };
+		8FFCFC6D06A71853AD0F4572E32A531C /* WoofTabBarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WoofTabBarView.swift; sourceTree = "<group>"; };
+		9D5B6EE826697563EEF24BC517C5D3E1 /* WoofTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WoofTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AE3BC8DA061E1FED1F93133EAB52A186 /* WoofTabBarItemView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WoofTabBarItemView.swift; sourceTree = "<group>"; };
 		AFECBC24E09D0D25F822C27BD944AFD4 /* Pods-Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-frameworks.sh"; sourceTree = "<group>"; };
 		B31929A7D565F4BF900D48BD88D2E6CC /* WoofTabBarController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WoofTabBarController-dummy.m"; sourceTree = "<group>"; };
 		B3FD8F1856692F54E05F4F3309B94557 /* WoofTabBarController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WoofTabBarController.modulemap; sourceTree = "<group>"; };
 		B45138496B85A072654D1D0F8EBBEDE5 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		C455A9E1F4C39FA2E4FBDC4DD8E44AD6 /* WoofTabBarControllerClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WoofTabBarControllerClass.swift; path = WoofTabBarController/WoofTabBarController/WoofTabBarControllerClass.swift; sourceTree = "<group>"; };
+		C455A9E1F4C39FA2E4FBDC4DD8E44AD6 /* WoofTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WoofTabBarController.swift; sourceTree = "<group>"; };
 		CD344285AB999A79037EB92B38BAF50C /* WoofTabBarController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WoofTabBarController.xcconfig; sourceTree = "<group>"; };
 		D6D7C498FA339E02BD53ECB8916CEA8E /* Pods-Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Example-dummy.m"; sourceTree = "<group>"; };
 		DD146BC56CF31C5E8C6A30A5B2F743D2 /* WoofTabBarController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WoofTabBarController-Info.plist"; sourceTree = "<group>"; };
-		DEE90D1F3F3F5DA43873757DDBACA537 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		DEE90D1F3F3F5DA43873757DDBACA537 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E4226B4523A36B1A00405386 /* WoofTabBarControllerClass+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WoofTabBarControllerClass+DataSource.swift"; sourceTree = "<group>"; };
+		E4226B4723A36BA200405386 /* WoofTabBarControllerClass+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WoofTabBarControllerClass+Delegate.swift"; sourceTree = "<group>"; };
+		E4226B4B23A36E4800405386 /* WoofTabBarView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WoofTabBarView+Delegate.swift"; sourceTree = "<group>"; };
+		E4226B4D23A36F1500405386 /* WoofTabBarItemView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WoofTabBarItemView+Delegate.swift"; sourceTree = "<group>"; };
 		EA21B344259B58996DB73382B1B1521F /* Pods-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,11 +91,8 @@
 		1282F15CF58EA7CEC889309607192828 /* WoofTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				899F002DC03ECFC92C1AB1DCF29A01A0 /* BezierView.swift */,
-				C455A9E1F4C39FA2E4FBDC4DD8E44AD6 /* WoofTabBarControllerClass.swift */,
-				78FCFE7771244806EB950DF161506BC0 /* WoofTabBarItem.swift */,
-				AE3BC8DA061E1FED1F93133EAB52A186 /* WoofTabBarItemView.swift */,
-				8FFCFC6D06A71853AD0F4572E32A531C /* WoofTabBarView.swift */,
+				E4226B4A23A36DBB00405386 /* BarView */,
+				E4226B4923A36D1100405386 /* ViewController */,
 				4F116BCB8A703E0ED7CC1B309DB2E9A4 /* Pod */,
 				80304DB3DD34C7AA2DD4C96A705CC067 /* Support Files */,
 			);
@@ -186,6 +191,29 @@
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4226B4923A36D1100405386 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C455A9E1F4C39FA2E4FBDC4DD8E44AD6 /* WoofTabBarController.swift */,
+				E4226B4523A36B1A00405386 /* WoofTabBarControllerClass+DataSource.swift */,
+				E4226B4723A36BA200405386 /* WoofTabBarControllerClass+Delegate.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E4226B4A23A36DBB00405386 /* BarView */ = {
+			isa = PBXGroup;
+			children = (
+				899F002DC03ECFC92C1AB1DCF29A01A0 /* BezierView.swift */,
+				78FCFE7771244806EB950DF161506BC0 /* WoofTabBarItem.swift */,
+				AE3BC8DA061E1FED1F93133EAB52A186 /* WoofTabBarItemView.swift */,
+				E4226B4D23A36F1500405386 /* WoofTabBarItemView+Delegate.swift */,
+				8FFCFC6D06A71853AD0F4572E32A531C /* WoofTabBarView.swift */,
+				E4226B4B23A36E4800405386 /* WoofTabBarView+Delegate.swift */,
+			);
+			path = BarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,9 +334,13 @@
 			files = (
 				522BA255C376E66782D9015649E46253 /* BezierView.swift in Sources */,
 				19DAA5B7917EA338601F2E2502B3B1B9 /* WoofTabBarController-dummy.m in Sources */,
-				FA2C4A1E64143E1EC67AC653F849918E /* WoofTabBarControllerClass.swift in Sources */,
+				E4226B4823A36BA200405386 /* WoofTabBarControllerClass+Delegate.swift in Sources */,
+				E4226B4E23A36F1500405386 /* WoofTabBarItemView+Delegate.swift in Sources */,
+				FA2C4A1E64143E1EC67AC653F849918E /* WoofTabBarController.swift in Sources */,
 				367F013A238F214CEE73776289B20C93 /* WoofTabBarItem.swift in Sources */,
 				FC0D79EDBB47BE5911AC59FF4CC84555 /* WoofTabBarItemView.swift in Sources */,
+				E4226B4C23A36E4800405386 /* WoofTabBarView+Delegate.swift in Sources */,
+				E4226B4623A36B1A00405386 /* WoofTabBarControllerClass+DataSource.swift in Sources */,
 				A2DD8BE3375D736152CB491C08A4C83D /* WoofTabBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
