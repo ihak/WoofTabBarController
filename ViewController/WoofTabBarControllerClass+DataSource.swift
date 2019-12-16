@@ -14,7 +14,6 @@ public protocol WoofTabBarControllerDataSource: UIViewController {
     // If true, previous VC is not removed before adding
     // this VC.
     var addsAsAnOverlay: Bool { get }
-    
 }
 
 // Default implementation to mark protocol methods optional

@@ -16,6 +16,8 @@ open class WoofTabBarController: UIViewController {
     var currentTabVC: UIViewController!
     var tabContainerView = UIView()
     
+    open var defaultIndex: Int { 0 }
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -38,6 +40,7 @@ open class WoofTabBarController: UIViewController {
         tabBarView = WoofTabBarView(barItems: barItems)
         tabBarView.backgroundColor = .clear
         tabBarView.delegate = self
+        tabBarView.defaultSelectedIndex = defaultIndex
         
         tabBarView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(tabBarView)
@@ -52,7 +55,7 @@ open class WoofTabBarController: UIViewController {
     
     open override func viewWillAppear(_ animated: Bool) {
         guard currentTabVC != nil else {
-            replaceTabVC(withTabVCAt: 0)
+            replaceTabVC(withTabVCAt: defaultIndex)
             return
         }
     }

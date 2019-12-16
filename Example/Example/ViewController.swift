@@ -10,7 +10,9 @@ import UIKit
 import WoofTabBarController
 
 class ViewController: WoofTabBarController {
-
+    
+    override var defaultIndex: Int { 4 }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -33,7 +35,7 @@ class ViewController: WoofTabBarController {
 
 class Tab1Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabBarControllerDelegate {
     override func viewDidLoad() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .random
         
         print("\(String(describing: type(of: self)))->\(#function) called ")
     }
@@ -149,11 +151,11 @@ class Tab4Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabB
     }
     
     func shouldSelect() -> Bool {
-        return false
+        return true
     }
     
     func shouldAnimate() -> Bool {
-        return false
+        return true
     }
 }
 
