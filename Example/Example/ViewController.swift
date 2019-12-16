@@ -90,6 +90,10 @@ class Tab2Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabB
     func shouldAnimate() -> Bool {
         return false
     }
+    
+    func shouldHighlight() -> Bool {
+        return false
+    }
 }
 
 class Tab3Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabBarControllerDelegate {

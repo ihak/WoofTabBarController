@@ -8,9 +8,11 @@
 import Foundation
 
 public protocol WoofTabBarControllerDelegate: UIViewController {
-    func shouldAnimate() -> Bool
-    
     func shouldSelect() -> Bool
+    
+    func shouldHighlight() -> Bool
+    
+    func shouldAnimate() -> Bool
     
     func didSelect()
     
@@ -19,9 +21,11 @@ public protocol WoofTabBarControllerDelegate: UIViewController {
 
 // Default implementation to mark protocol methods optional
 public extension WoofTabBarControllerDelegate {
-    func shouldAnimate() -> Bool { true }
-    
     func shouldSelect() -> Bool { true }
+    
+    func shouldHighlight() -> Bool { true }
+    
+    func shouldAnimate() -> Bool { true }
     
     func didSelect() {}
     

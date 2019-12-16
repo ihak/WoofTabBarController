@@ -33,15 +33,25 @@ public class WoofTabBarView: UIView {
     
     public var shadow: (radius, opacity, offset, color)?
     
-    var selectedIndex = -1 {
+    // The item index that is currently selected.
+    // An item can be selected but is not highlighted.
+    var selectedIndex = -1
+    
+    // An item can be selected but not highlighted.
+    // The item index that is highlighted i.e curve is at
+    // that index and circle view is moved up.
+    var highlightedIndex = -1 {
         didSet {
             guard oldValue > -1 else {
                 return
             }
-            unSelectItem(index: oldValue)
+            
+            if oldValue != highlightedIndex {
+                unSelectItem(index: oldValue)
+            }
         }
     }
-     
+    
     convenience init(barItems: [WoofTabBarItem]) {
         self.init()
         self.barItems.append(contentsOf: barItems)
@@ -133,9 +143,17 @@ extension WoofTabBarView: WoofTabBarItemViewDelegate {
             }
             self.changeCurveShape(position: itemView.center, animated: false)
             self.selectedIndex = defaultSelectedIndex
+            self.highlightedIndex = defaultSelectedIndex
             return true
         }
         return false
+    }
+    
+    func shouldHighlight(itemView: WoofTabBarItemView) -> Bool {
+        if let index = indexOfItemView(itemView: itemView), let delegate = self.delegate {
+            return delegate.shouldHighlightItem(itemView: itemView, atIndex: index)
+        }
+        return true
     }
     
     func shouldTap(itemView: WoofTabBarItemView) -> Bool {
@@ -157,9 +175,17 @@ extension WoofTabBarView: WoofTabBarItemViewDelegate {
             guard index != selectedIndex else {
                 return
             }
-            self.changeCurveShape(position: itemView.center, animated: self.shouldAnimate(itemView: itemView))
+            
+            // Move the curve if highlight is enabled for current selection
+            if self.shouldHighlight(itemView: itemView) {
+                self.changeCurveShape(position: itemView.center, animated: self.shouldAnimate(itemView: itemView))
+                self.highlightedIndex = index
+            }
+            
             self.selectedIndex = index
             print("selected index", selectedIndex)
+            
+            // Inform the delegate about the item selection
             self.delegate?.didSelectItem(itemView: itemView, atIndex: index)
         }
     }

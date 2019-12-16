@@ -105,6 +105,11 @@ extension WoofTabBarController: WoofTabBarViewDelegate {
         return vc.shouldSelect()
     }
     
+    func shouldHighlightItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool {
+        let vc = self.tabViewControllers[atIndex]
+        return vc.shouldHighlight()
+    }
+    
     func shouldAnimateItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool {
         let vc = self.tabViewControllers[atIndex]
         return vc.shouldAnimate()

@@ -12,6 +12,8 @@ protocol WoofTabBarViewDelegate {
     
     func shouldAnimateItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool
     
+    func shouldHighlightItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool
+    
     func didSelectItem(itemView: WoofTabBarItemView, atIndex: Int)
     
     func didAnimateItem(itemView: WoofTabBarItemView, atIndex: Int)
@@ -19,6 +21,8 @@ protocol WoofTabBarViewDelegate {
 
 extension WoofTabBarViewDelegate {
     func shouldSelectItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool { true }
+    
+    func shouldHighlightItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool { true }
     
     func shouldAnimateItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool { true }
     

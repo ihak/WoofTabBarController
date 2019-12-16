@@ -234,13 +234,14 @@ public class WoofTabBarItemView: UIView {
         
         // else ask the delegate
         if delegate.shouldTap(itemView: self) {
-            if delegate.shouldAnimate(itemView: self) {
-                animateContainerUp(duration: circleAnimationDuration)
+            if delegate.shouldHighlight(itemView: self) {
+                if delegate.shouldAnimate(itemView: self) {
+                    animateContainerUp(duration: circleAnimationDuration)
+                }
+                else {
+                    animateContainerUp(duration: 0.0)
+                }
             }
-            else {
-                animateContainerUp(duration: 0.0)
-            }
-            
             delegate.didTap(itemView: self)
         }
     }
