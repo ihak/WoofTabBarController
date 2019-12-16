@@ -10,47 +10,54 @@ import UIKit
 
 public class WoofTabBarItemView: UIView {
 
+    // Model object that corresponds with the view.
     var item: WoofTabBarItem!
     
-    // contains the image and notification view
+    // Contains the image and notification view.
     private var imageContainer = UIView()
     
-    // icon image
+    // Icon image.
     private var imageView = UIImageView()
     
-    // circular view that highlights when item is selected
+    // Circular view that highlights when item is selected.
     private var backCircleView = UIView()
     
-    // circular notification bubble view
+    // Circular notification bubble view.
     private var notificationBubbleContainer = UIView()
     
-    // notification bubble textlabel
+    // Notification bubble textlabel.
     private var notificationBubbleLabel = UILabel()
     
+    // Background color of the back circle.
     var circleBackgroundColor = UIColor.white {
         didSet {
             self.backCircleView.backgroundColor = circleBackgroundColor
         }
     }
     
+    // Background color of the notification bubble.
     var notificationBubbleBackgroundClor = UIColor.orange {
         didSet {
             self.notificationBubbleContainer.backgroundColor = notificationBubbleBackgroundClor
         }
     }
     
+    // Text color of the notification label.
     var notificationTextColor = UIColor.white {
         didSet {
             self.notificationBubbleLabel.textColor = notificationTextColor
         }
     }
     
+    // Image tint color. Image rendering mode is automatically
+    // set to template when tint color is set.
     var imageTintColor: UIColor? {
         didSet {
             applyTint(color: imageTintColor)
         }
     }
     
+    // Circle up and down animation duration
     private var circleAnimationDuration = 0.2
     
     var delegate: WoofTabBarItemViewDelegate?
@@ -188,6 +195,8 @@ public class WoofTabBarItemView: UIView {
         CGSize(width: 50.0, height: 70.0)
     }
     
+    // Change the rendering mode of the image to 'alwaysTemplate' and
+    // set the tint color.
     private func applyTint(color: UIColor?) {
         if let color = color, item != nil {
             self.imageView.image = UIImage(named: item.image)?.withRenderingMode(.alwaysTemplate)
@@ -195,11 +204,13 @@ public class WoofTabBarItemView: UIView {
         }
     }
     
+    // Adds the tap gesture the view.
     private func addTapGesture(view: UIView) {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         view.addGestureRecognizer(tapGestureRecognizer)
     }
     
+    // Animates the container up with given duration.
     private func animateContainerUp(duration: Double) {
         UIView.animate(withDuration: duration, animations: {
             var t = CGAffineTransform.identity
@@ -217,6 +228,7 @@ public class WoofTabBarItemView: UIView {
         }
     }
     
+    // Animates the container down with the given duration.
     private func animateContainerBack(duration: Double) {
         UIView.animate(withDuration: duration, animations: {
             self.imageContainer.transform = .identity
@@ -225,6 +237,7 @@ public class WoofTabBarItemView: UIView {
         }, completion: nil)
     }
     
+    // Handles the tap gesture on the view.
     @objc private func handleTap() {
         // if no delegate is present, select by default
         guard let delegate = self.delegate else {
@@ -246,6 +259,8 @@ public class WoofTabBarItemView: UIView {
         }
     }
     
+    // Unselects (animates down) the view. If animated is true
+    // animation is performed.
     func unSelect(animated: Bool = true) {
         if animated == false {
             animateContainerBack(duration: 0.0)
@@ -255,6 +270,8 @@ public class WoofTabBarItemView: UIView {
         }
     }
     
+    // Selects (animates up) the view. If animated is true
+    // animation is performed.
     func select(animated: Bool = true) {
         if animated == false {
             animateContainerUp(duration: 0.0)
@@ -264,10 +281,13 @@ public class WoofTabBarItemView: UIView {
         }
     }
     
+    // Allows to set the circle up/down animation duration.
     func circleAnimationDuration(duration: Double) {
         circleAnimationDuration = duration
     }
     
+    // Allows to set the shadow peroperties. Bydefault shadow
+    // is off.
     func shadow(opacity: Double = 0.0, radius: Double = 0.0, offset: CGSize = .zero, color: UIColor = .clear) {
         backCircleView.layer.shadowRadius = CGFloat(radius)
         backCircleView.layer.shadowOffset = offset

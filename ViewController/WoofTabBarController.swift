@@ -9,22 +9,34 @@
 import UIKit
 
 open class WoofTabBarController: UIViewController {
+    
+    
     public typealias WoofTabControllerItem = WoofTabBarControllerDataSource & WoofTabBarControllerDelegate
+    
+    // Array containing viewcontrollers displayed in tabs
     private var tabViewControllers = [WoofTabControllerItem]()
     
+    // Bar view displayed at the bottom which contains tab icons and names
     var tabBarView: WoofTabBarView!
-    var currentTabVC: UIViewController!
-    var tabContainerView = UIView()
     
+    // Currently selected viewcontroller
+    var currentTabVC: UIViewController!
+    
+    
+    private var tabContainerView = UIView()
+    
+    // Default selected index
     open var defaultIndex: Int { 0 }
     
+    // Override to perform additionalfunctinality. You must call the super.viewdidLoad
+    // in the orverridden class
     override open func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         tabContainerView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(tabContainerView)
-        tabContainerView.backgroundColor = .random
+        tabContainerView.backgroundColor = .white
         NSLayoutConstraint.activate([
             tabContainerView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             tabContainerView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
@@ -53,6 +65,8 @@ open class WoofTabBarController: UIViewController {
         ])
     }
     
+    // Override to perform additional functionality. Must call superclass's
+    // implementation.
     open override func viewWillAppear(_ animated: Bool) {
         guard currentTabVC != nil else {
             replaceTabVC(withTabVCAt: defaultIndex)
@@ -60,15 +74,19 @@ open class WoofTabBarController: UIViewController {
         }
     }
     
+    // Should override this method to provide your own
+    // viewcontrollers to be displayed in the tabs.
     open func viewControllers() -> [WoofTabControllerItem] {
         return [WoofTab1Controller(), WoofTab2Controller()]
     }
 
-    open func configureTabBarView(block: @escaping (_ tabBarView: WoofTabBarView)->Void) {
+    // Customize the bar view via this method.
+    public func configureTabBarView(block: @escaping (_ tabBarView: WoofTabBarView)->Void) {
         block(tabBarView)
     }
     
-    func replaceTabVC(withTabVCAt index:Int) {
+    // Replaces the current tab with the selected one.
+    private func replaceTabVC(withTabVCAt index:Int) {
         let vc = self.tabViewControllers[index]
         let view = vc.view!
         
@@ -122,7 +140,7 @@ extension WoofTabBarController: WoofTabBarViewDelegate {
     }
 }
 
-
+// Classes for dummy implementation
 class WoofTab1Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabBarControllerDelegate {
     func woofTabBarItem() -> WoofTabBarItem {
         return WoofTabBarItem(title: "Tab 1", image: "")

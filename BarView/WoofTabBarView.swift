@@ -10,27 +10,50 @@ import UIKit
 
 public class WoofTabBarView: UIView {
 
+    // Array of items corresponding to each tab.
     var barItems = [WoofTabBarItem]()
+    
     var delegate: WoofTabBarViewDelegate?
 
-    let bezierView = BezierView()
-    let stackView = UIStackView()
-    var defaultSelectedIndex = 3
+    // Bezier view (the curve that runs behind).
+    private let bezierView = BezierView()
     
+    // Stackview contains the item views created.
+    private let stackView = UIStackView()
+    
+    // Default selected index.
+    var defaultSelectedIndex = 0
+    
+    // Background color of the bezier view
     public var bezierBackgroundColor: UIColor = .white
+    
+    // Background color of the circular view that highlights
+    // and animates up upon selection.
     public var circleBackgroundColor: UIColor = .white
+    
+    // Background color of the notification bubble.
     public var notificationBubbleColor: UIColor = .orange
+    
+    // Text color of notification label.
     public var notificationTextColor: UIColor = .white
     
+    // Image tint color. Image is automatically converted to template
+    // rendering mode when tint color is set.
     public var imageTint: UIColor?
+    
+    // Animation duratin of the bezier along the x axis.
     public var bezieranimationDuration = 0.15
+    
+    // Animation of the circular view along the y axis.
     public var circleAnimationDuration = 0.2
     
+    // Typealiases for shadow properties
     public typealias offset = CGSize
     public typealias radius = Double
     public typealias opacity = Double
     public typealias color = UIColor
     
+    // Shadow properties combined in a tuple
     public var shadow: (radius, opacity, offset, color)?
     
     // The item index that is currently selected.
@@ -52,6 +75,9 @@ public class WoofTabBarView: UIView {
         }
     }
     
+    // Convenience initializer that takes an array of
+    // WoofTabBarItem(s). The no of tabs are derived from
+    // this array.
     convenience init(barItems: [WoofTabBarItem]) {
         self.init()
         self.barItems.append(contentsOf: barItems)
@@ -114,22 +140,26 @@ public class WoofTabBarView: UIView {
         return CGSize(width: 300.0, height: 60.0)
     }
     
+    // Unselects an item at the given index.
     private func unSelectItem(index: Int) {
         if let item = self.stackView.arrangedSubviews[index] as? WoofTabBarItemView {
             item.unSelect()
         }
     }
     
+    // Select an item at the given index. If animated is true, animation is performed.
     private func selectItem(index: Int, animated: Bool) {
         if let item = self.stackView.arrangedSubviews[index] as? WoofTabBarItemView {
             item.select(animated: animated)
         }
     }
     
+    // Move the curve of the bezier view according to the selected item position.
     private func changeCurveShape(position: CGPoint, animated: Bool = true) {
         bezierView.moveCurve(to: position.x, animated: animated)
     }
     
+    // Returns the index of given item view.
     private func indexOfItemView(itemView: WoofTabBarItemView) -> Int? {
         return self.stackView.arrangedSubviews.firstIndex(of: itemView)
     }
@@ -194,14 +224,5 @@ extension WoofTabBarView: WoofTabBarItemViewDelegate {
         if let index = indexOfItemView(itemView: itemView) {
             delegate?.didAnimateItem(itemView: itemView, atIndex: index)
         }
-    }
-}
-
-extension UIColor {
-    static var random: UIColor {
-        return UIColor(red: .random(in: 0...1),
-                       green: .random(in: 0...1),
-                       blue: .random(in: 0...1),
-                       alpha: 1.0)
     }
 }
