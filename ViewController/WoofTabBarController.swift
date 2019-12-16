@@ -78,6 +78,12 @@ open class WoofTabBarController: UIViewController {
             currentTabVC.view.removeFromSuperview()
             currentTabVC.removeFromParent()
             self.currentTabVC = nil
+            
+            for childvc in self.children {
+                childvc.willMove(toParent: nil)
+                childvc.view.removeFromSuperview()
+                childvc.removeFromParent()
+            }
         }
         
         self.addChild(vc)
