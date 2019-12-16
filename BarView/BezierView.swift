@@ -46,10 +46,11 @@ class BezierView: UIView {
         return path.cgPath
     }
     
-    private func animateShape(position: CGFloat) {
+    // Animates the shape layer to the target position
+    private func animateShape(position: CGFloat, duration: Double) {
         let newShapePath = curveShapePath(postion: position)
         let animation = CABasicAnimation(keyPath: "path")
-        animation.duration = animationDuration
+        animation.duration = duration
         animation.toValue = newShapePath
         animation.fillMode = CAMediaTimingFillMode.forwards
         animation.isRemovedOnCompletion = false
@@ -65,9 +66,10 @@ class BezierView: UIView {
         animationDuration = duration
     }
     
-    func moveCurve(to position: CGFloat) {
+    func moveCurve(to position: CGFloat, animated: Bool = true) {
         self.initialPosition = position
-        self.animateShape(position: position)
+        let duration = animated ? animationDuration : 0.001
+        self.animateShape(position: position, duration: duration)
     }
     
     func shadow(opacity: Double = 0.0, radius: Double = 0.0, offset: CGSize = .zero, color: UIColor = .clear) {

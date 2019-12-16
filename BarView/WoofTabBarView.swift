@@ -116,8 +116,8 @@ public class WoofTabBarView: UIView {
         }
     }
     
-    private func changeCurveShape(position: CGPoint) {
-        bezierView.moveCurve(to: position.x)
+    private func changeCurveShape(position: CGPoint, animated: Bool = true) {
+        bezierView.moveCurve(to: position.x, animated: animated)
     }
     
     private func indexOfItemView(itemView: WoofTabBarItemView) -> Int? {
@@ -131,7 +131,7 @@ extension WoofTabBarView: WoofTabBarItemViewDelegate {
             guard defaultItem == itemView else {
                 return false
             }
-            self.changeCurveShape(position: itemView.center)
+            self.changeCurveShape(position: itemView.center, animated: false)
             self.selectedIndex = defaultSelectedIndex
             return true
         }
@@ -157,7 +157,7 @@ extension WoofTabBarView: WoofTabBarItemViewDelegate {
             guard index != selectedIndex else {
                 return
             }
-            self.changeCurveShape(position: itemView.center)
+            self.changeCurveShape(position: itemView.center, animated: self.shouldAnimate(itemView: itemView))
             self.selectedIndex = index
             print("selected index", selectedIndex)
             self.delegate?.didSelectItem(itemView: itemView, atIndex: index)
