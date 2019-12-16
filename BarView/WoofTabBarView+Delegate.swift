@@ -35,7 +35,7 @@ protocol WoofTabBarViewDelegate {
     
     /**
      Called before the animation. Highlighting state is the one when view is
-     selected and circulat view is moved up and bezier curve is moved at the
+     selected and circular view is moved up and bezier curve is moved at the
      selected item.
      If you want your view to be selected but don't want to perform any visual
      alert in the bar view return false in this method.
