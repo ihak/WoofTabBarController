@@ -33,6 +33,10 @@ class ViewController: WoofTabBarController {
     }
 }
 
+extension ViewController: WoofTabBarControllerBarViewDelegate {
+    
+}
+
 class Tab1Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabBarControllerDelegate {
     override func viewDidLoad() {
         self.view.backgroundColor = .random
