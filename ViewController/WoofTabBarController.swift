@@ -16,6 +16,9 @@ open class WoofTabBarController: UIViewController {
     // Array containing viewcontrollers displayed in tabs
     private var tabViewControllers = [WoofTabControllerItem]()
     
+    // Delegate class implementing WoofTabBarControllerBarViewDelegate protocol
+    public var delegate: WoofTabBarControllerBarViewDelegate?
+    
     // Bar view displayed at the bottom which contains tab icons and names
     var tabBarView: WoofTabBarView!
     
@@ -122,21 +125,52 @@ extension WoofTabBarController: WoofTabBarViewDelegate {
     func didSelectItem(itemView: WoofTabBarItemView, atIndex: Int) {
         // replace previous vc with the new one
         replaceTabVC(withTabVCAt:atIndex)
+        
+        let vc = self.tabViewControllers[atIndex]
+        delegate?.didSelectItem(itemView: itemView, destinationVC: vc, atIndex: atIndex)
     }
     
     func shouldSelectItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool {
+        // If delegate is implemented, ask from the delegate
+        // If delegate returns false, return false, else if delegate
+        // returns true, ask the vc
         let vc = self.tabViewControllers[atIndex]
+        if let delegate = self.delegate {
+            if delegate.shouldSelectItem(itemView: itemView, destinationVC: vc, atIndex: atIndex) {
+                return vc.shouldSelect()
+            }
+            return false
+        }
+        
         return vc.shouldSelect()
     }
     
     func shouldHighlightItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool {
         let vc = self.tabViewControllers[atIndex]
+        if let delegate = self.delegate {
+            if delegate.shouldHighlightItem(itemView: itemView, destinationVC: vc, atIndex: atIndex) {
+                return vc.shouldHighlight()
+            }
+            return false
+        }
         return vc.shouldHighlight()
     }
     
     func shouldAnimateItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool {
         let vc = self.tabViewControllers[atIndex]
+        if let delegate = self.delegate {
+            if delegate.shouldAnimateItem(itemView: itemView, destinationVC: vc, atIndex: atIndex) {
+                return vc.shouldAnimate()
+            }
+            return false
+        }
         return vc.shouldAnimate()
+    }
+    
+    func didAnimateItem(itemView: WoofTabBarItemView, atIndex: Int) {
+        let vc = self.tabViewControllers[atIndex]
+        delegate?.didAnimateItem(itemView: itemView, destinationVC: vc, atIndex: atIndex)
+        vc.didAnimate()
     }
 }
 

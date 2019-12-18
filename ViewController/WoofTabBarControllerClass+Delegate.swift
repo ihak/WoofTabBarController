@@ -122,6 +122,15 @@ public protocol WoofTabBarControllerBarViewDelegate: WoofTabBarController {
     func didSelectItem(itemView: WoofTabBarItemView, destinationVC: WoofTabControllerItem, atIndex: Int)
     
     /**
+     Called when the view is de-selected.
+     
+     - Parameter itemView: WoofTabBarItemView, the de-selected view.
+     - Parameter vc: WoofTabControllerItem, a UIViewController subclass that implements datasource and delegate methods of WoofTabBarController
+     - Parameter atIndex: Int, Index of the item.
+     */
+    func didDeSelectItem(itemView: WoofTabBarItemView, vc: WoofTabControllerItem, atIndex: Int)
+    
+    /**
     Called when the animation finished.
     
     - Parameter itemView: WoofTabBarItemView, the selected view.
@@ -140,6 +149,8 @@ public extension WoofTabBarControllerBarViewDelegate {
     func shouldHighlightItem(itemView: WoofTabBarItemView, destinationVC: WoofTabControllerItem, atIndex: Int) -> Bool { true }
 
     func didSelectItem(itemView: WoofTabBarItemView, destinationVC: WoofTabControllerItem, atIndex: Int) {}
+    
+    func didDeSelectItem(itemView: WoofTabBarItemView, vc: WoofTabControllerItem, atIndex: Int){}
 
     func didAnimateItem(itemView: WoofTabBarItemView, destinationVC: WoofTabControllerItem, atIndex: Int) {}
 }
