@@ -23,8 +23,10 @@ open class WoofTabBarController: UIViewController {
     var tabBarView: WoofTabBarView!
     
     // Currently selected viewcontroller
-    var currentTabVC: UIViewController!
+    var currentTabVC: WoofTabControllerItem!
     
+    // Currently selected itemview
+    var currentItemView: WoofTabBarItemView!
     
     private var tabContainerView = UIView()
     
@@ -123,17 +125,24 @@ open class WoofTabBarController: UIViewController {
 
 extension WoofTabBarController: WoofTabBarViewDelegate {
     func didSelectItem(itemView: WoofTabBarItemView, atIndex: Int) {
+        if let index = self.tabViewControllers.firstIndex(where: {$0 == currentTabVC}) {
+            delegate?.didDeSelectItem(itemView: currentItemView, vc: currentTabVC, atIndex: index)
+        }
+        
         // replace previous vc with the new one
         replaceTabVC(withTabVCAt:atIndex)
+        currentItemView = itemView
         
         let vc = self.tabViewControllers[atIndex]
         delegate?.didSelectItem(itemView: itemView, destinationVC: vc, atIndex: atIndex)
     }
     
     func shouldSelectItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool {
-        // If delegate is implemented, ask from the delegate
-        // If delegate returns false, return false, else if delegate
-        // returns true, ask the vc
+        // If delegate object is present, calls delegate's shouldSelectItem method
+        // If delegate return true, then calls viewcontroller's shouldSelect.
+        // Else if delegate returns false, it returns false without calling
+        // viewcontroller's method
+        
         let vc = self.tabViewControllers[atIndex]
         if let delegate = self.delegate {
             if delegate.shouldSelectItem(itemView: itemView, destinationVC: vc, atIndex: atIndex) {
@@ -146,6 +155,11 @@ extension WoofTabBarController: WoofTabBarViewDelegate {
     }
     
     func shouldHighlightItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool {
+        // If delegate object is present, calls delegate's shouldHighlightItem method
+        // If delegate return true, then calls viewcontroller's shouldHighlight.
+        // Else if delegate returns false, it returns false without calling
+        // viewcontroller's method
+
         let vc = self.tabViewControllers[atIndex]
         if let delegate = self.delegate {
             if delegate.shouldHighlightItem(itemView: itemView, destinationVC: vc, atIndex: atIndex) {
@@ -157,6 +171,11 @@ extension WoofTabBarController: WoofTabBarViewDelegate {
     }
     
     func shouldAnimateItem(itemView: WoofTabBarItemView, atIndex: Int) -> Bool {
+        // If delegate object is present, calls delegate's shouldAnimateItem method
+        // If delegate return true, then calls viewcontroller's shouldAnimate.
+        // Else if delegate returns false, it returns false without calling
+        // viewcontroller's method
+
         let vc = self.tabViewControllers[atIndex]
         if let delegate = self.delegate {
             if delegate.shouldAnimateItem(itemView: itemView, destinationVC: vc, atIndex: atIndex) {
