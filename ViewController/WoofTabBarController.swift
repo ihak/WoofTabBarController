@@ -79,6 +79,15 @@ open class WoofTabBarController: UIViewController {
         }
     }
     
+    // Override to perform additional functionality. Must call superclass's
+    // implementation.
+    open override func viewDidAppear(_ animated: Bool) {
+        guard currentItemView != nil else {
+            self.currentItemView = tabBarView.itemView(at: defaultIndex)
+            return
+        }
+    }
+    
     // Should override this method to provide your own
     // viewcontrollers to be displayed in the tabs.
     open func viewControllers() -> [WoofTabControllerItem] {
@@ -93,6 +102,7 @@ open class WoofTabBarController: UIViewController {
     // Replaces the current tab with the selected one.
     private func replaceTabVC(withTabVCAt index:Int) {
         let vc = self.tabViewControllers[index]
+        let itemView = tabBarView.itemView(at: index)
         let view = vc.view!
         
         // Don't remove previous VC if new VC is an overlay
@@ -120,6 +130,7 @@ open class WoofTabBarController: UIViewController {
         ])
         
         self.currentTabVC = vc
+        self.currentItemView = itemView
     }
 }
 
@@ -131,7 +142,6 @@ extension WoofTabBarController: WoofTabBarViewDelegate {
         
         // replace previous vc with the new one
         replaceTabVC(withTabVCAt:atIndex)
-        currentItemView = itemView
         
         let vc = self.tabViewControllers[atIndex]
         delegate?.didSelectItem(itemView: itemView, destinationVC: vc, atIndex: atIndex)

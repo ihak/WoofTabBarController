@@ -50,15 +50,15 @@ extension ViewController: WoofTabBarControllerBarViewDelegate {
     }
     
     func didSelectItem(itemView: WoofTabBarItemView, destinationVC: WoofTabBarController.WoofTabControllerItem, atIndex: Int) {
-        //
+        print("Selected \(atIndex)")
     }
     
     func didDeSelectItem(itemView: WoofTabBarItemView, vc: WoofTabBarController.WoofTabControllerItem, atIndex: Int) {
-        //
+        print("De-Selected \(atIndex)")
     }
     
     func didAnimateItem(itemView: WoofTabBarItemView, destinationVC: WoofTabBarController.WoofTabControllerItem, atIndex: Int) {
-        //
+        print("Ainmated \(atIndex)")
     }
 }
 

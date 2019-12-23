@@ -163,6 +163,13 @@ public class WoofTabBarView: UIView {
     private func indexOfItemView(itemView: WoofTabBarItemView) -> Int? {
         return self.stackView.arrangedSubviews.firstIndex(of: itemView)
     }
+    
+    func itemView(at index: Int) -> WoofTabBarItemView? {
+        guard self.stackView.arrangedSubviews.count > index else {
+            return nil
+        }
+        return self.stackView.arrangedSubviews[index] as? WoofTabBarItemView
+    }
 }
 
 extension WoofTabBarView: WoofTabBarItemViewDelegate {
