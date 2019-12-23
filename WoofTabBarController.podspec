@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "WoofTabBarController"
-  spec.version      = "1.0.2"
+  spec.version      = "1.0.3"
   spec.summary      = "A customized tabbed controller build on Swift."
 
   # This description is used to generate tags and improve search results.
@@ -25,7 +25,9 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-                     A customized tabbed controller build on Swift.
+                     A highly customizable tabbed controller. Manages multiple tabs
+                     with animation. Provides flexibility to change outlook. Easy
+                     to implement. Works out-of-the-box.
                    DESC
 
   spec.homepage     = "https://github.com/ihak/WooftabBarController"
