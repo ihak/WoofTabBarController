@@ -16,7 +16,7 @@ class ViewController: WoofTabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        delegate = self
         self.configureTabBarView { (barview) in
 //            barview.backgroundColor = .green
 //            barview.bezierBackgroundColor = .orange
@@ -34,7 +34,32 @@ class ViewController: WoofTabBarController {
 }
 
 extension ViewController: WoofTabBarControllerBarViewDelegate {
+    func shouldSelectItem(itemView: WoofTabBarItemView, destinationVC: WoofTabBarController.WoofTabControllerItem, atIndex: Int) -> Bool {
+        if atIndex == 2 {
+            return false
+        }
+        return true
+    }
     
+    func shouldHighlightItem(itemView: WoofTabBarItemView, destinationVC: WoofTabBarController.WoofTabControllerItem, atIndex: Int) -> Bool {
+        true
+    }
+    
+    func shouldAnimateItem(itemView: WoofTabBarItemView, destinationVC: WoofTabBarController.WoofTabControllerItem, atIndex: Int) -> Bool {
+        true
+    }
+    
+    func didSelectItem(itemView: WoofTabBarItemView, destinationVC: WoofTabBarController.WoofTabControllerItem, atIndex: Int) {
+        print("Selected \(atIndex)")
+    }
+    
+    func didDeSelectItem(itemView: WoofTabBarItemView, vc: WoofTabBarController.WoofTabControllerItem, atIndex: Int) {
+        print("De-Selected \(atIndex)")
+    }
+    
+    func didAnimateItem(itemView: WoofTabBarItemView, destinationVC: WoofTabBarController.WoofTabControllerItem, atIndex: Int) {
+        print("Ainmated \(atIndex)")
+    }
 }
 
 class Tab1Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabBarControllerDelegate {
@@ -89,14 +114,6 @@ class Tab2Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabB
 
     func woofTabBarItem() -> WoofTabBarItem {
         return WoofTabBarItem(title: "Favorites", image: "heart")
-    }
-    
-    func shouldAnimate() -> Bool {
-        return false
-    }
-    
-    func shouldHighlight() -> Bool {
-        return false
     }
 }
 
@@ -159,11 +176,7 @@ class Tab4Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabB
     }
     
     func shouldSelect() -> Bool {
-        return true
-    }
-    
-    func shouldAnimate() -> Bool {
-        return true
+        return false
     }
 }
 
