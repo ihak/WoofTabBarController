@@ -62,10 +62,10 @@ Pod::Spec.new do |spec|
   #
 
   spec.platform     = :ios
-  spec.platform     = :ios, "12.0"
+  spec.platform     = :ios, "12.4"
 
   #  When using multiple platforms
-  spec.ios.deployment_target = "12.4"
+  spec.ios.deployment_target = "12.0"
   spec.swift_version = "4.2"
 
 
