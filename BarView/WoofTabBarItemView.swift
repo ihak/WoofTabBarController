@@ -57,6 +57,10 @@ public class WoofTabBarItemView: UIView {
         }
     }
     
+    // Image tint color. Image rendering mode is automatically
+    // set to template when tint color is set.
+    var selectedImageTintColor: UIColor?
+
     // Circle up and down animation duration
     private var circleAnimationDuration = 0.2
     
@@ -199,9 +203,21 @@ public class WoofTabBarItemView: UIView {
     // set the tint color.
     private func applyTint(color: UIColor?) {
         if let color = color, item != nil {
-            self.imageView.image = UIImage(named: item.image)?.withRenderingMode(.alwaysTemplate)
+            self.imageView.image = self.imageView.image?.withRenderingMode(.alwaysTemplate)
             self.imageView.tintColor = color
         }
+    }
+    
+    private func setSelectedImage() {
+        if let selectedImage = self.item.selectedImage {
+            self.imageView.image = UIImage(named: selectedImage)
+            applyTint(color: self.selectedImageTintColor)
+        }
+    }
+    
+    private func setUnSelectedImage() {
+        self.imageView.image = UIImage(named: item.image)
+        applyTint(color: self.imageTintColor)
     }
     
     // Adds the tap gesture the view.
@@ -225,6 +241,8 @@ public class WoofTabBarItemView: UIView {
             self.backCircleView.alpha = 1.0
         }) { (_) in
             self.delegate?.didAnimate(itemView: self)
+            self.setSelectedImage()
+
         }
     }
     
@@ -234,6 +252,7 @@ public class WoofTabBarItemView: UIView {
             self.imageContainer.transform = .identity
             self.backCircleView.transform = .identity
             self.backCircleView.alpha = 0.0
+            self.setUnSelectedImage()
         }, completion: nil)
     }
     

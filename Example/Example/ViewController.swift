@@ -24,6 +24,7 @@ class ViewController: WoofTabBarController {
 //            barview.bezieranimationDuration = 0.5
 //            barview.circleAnimationDuration = 1.5
 //            barview.imageTint = .green
+//            barview.selectedImageTint = .yellow
 //            barview.shadow = (3.0, 0.5, .zero, .gray)
         }
     }
@@ -86,7 +87,7 @@ class Tab1Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabB
     }
     
     func woofTabBarItem() -> WoofTabBarItem {
-        return WoofTabBarItem(title: "Home", image: "home")
+        return WoofTabBarItem(title: "Home", image: "home", selectedImage: "home-f")
     }
 }
 
@@ -113,7 +114,7 @@ class Tab2Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabB
     }
 
     func woofTabBarItem() -> WoofTabBarItem {
-        return WoofTabBarItem(title: "Favorites", image: "heart")
+        return WoofTabBarItem(title: "Favorites", image: "heart", selectedImage: "heart-f")
     }
 }
 
@@ -140,7 +141,7 @@ class Tab3Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabB
     }
 
     func woofTabBarItem() -> WoofTabBarItem {
-        return WoofTabBarItem(title: "Instagram", image: "instagram", notificationCount: 5)
+        return WoofTabBarItem(title: "Instagram", image: "instagram", selectedImage: "instagram-f", notificationCount: 5)
     }
 }
 
@@ -172,7 +173,7 @@ class Tab4Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabB
     }
 
     func woofTabBarItem() -> WoofTabBarItem {
-        return WoofTabBarItem(title: "Like", image: "like")
+        return WoofTabBarItem(title: "Like", image: "like", selectedImage: "like-f")
     }
     
     func shouldSelect() -> Bool {
@@ -203,7 +204,7 @@ class Tab5Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabB
     }
 
     func woofTabBarItem() -> WoofTabBarItem {
-        return WoofTabBarItem(title: "Shopping Cart", image: "shopping-cart")
+        return WoofTabBarItem(title: "Shopping Cart", image: "shopping-cart", selectedImage: "shopping-cart-f")
     }
 }
 

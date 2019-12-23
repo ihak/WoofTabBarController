@@ -41,6 +41,10 @@ public class WoofTabBarView: UIView {
     // rendering mode when tint color is set.
     public var imageTint: UIColor?
     
+    // Selected image tint color. Image is automatically converted to template
+    // rendering mode when tint color is set.
+    public var selectedImageTint: UIColor?
+    
     // Animation duratin of the bezier along the x axis.
     public var bezieranimationDuration = 0.15
     
@@ -98,6 +102,7 @@ public class WoofTabBarView: UIView {
             barItemView.circleAnimationDuration(duration: self.circleAnimationDuration)
             barItemView.item = item
             barItemView.imageTintColor = self.imageTint
+            barItemView.selectedImageTintColor = self.selectedImageTint
             barItemView.delegate = self
             if let shadow = self.shadow {
                 barItemView.shadow(opacity: shadow.1, radius: shadow.0, offset: shadow.2, color: shadow.3)
