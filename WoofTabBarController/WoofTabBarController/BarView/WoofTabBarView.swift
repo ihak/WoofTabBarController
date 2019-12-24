@@ -51,6 +51,18 @@ public class WoofTabBarView: UIView {
     // Animation of the circular view along the y axis.
     public var circleAnimationDuration = 0.2
     
+    // Adjusts the image size of items.
+    public var imageSize = CGSize(width: 40.0, height: 40.0)
+    
+    // Label font of items.
+    public var labelFont = UIFont.systemFont(ofSize: 13.0)
+    
+    // Notification label font.
+    public var notificationLabelFont = UIFont.boldSystemFont(ofSize: 9.0)
+    
+    // Notification bubble offset.
+    public var notificationBubbleOffset = CGSize(width: -10.0, height: 0.0)
+    
     // Typealiases for shadow properties
     public typealias offset = CGSize
     public typealias radius = Double
@@ -103,7 +115,12 @@ public class WoofTabBarView: UIView {
             barItemView.item = item
             barItemView.imageTintColor = self.imageTint
             barItemView.selectedImageTintColor = self.selectedImageTint
+            barItemView.imageSize(size: self.imageSize)
+            barItemView.notificationBubbleOffset(size: self.notificationBubbleOffset)
+            barItemView.labelFont(font: self.labelFont)
+            barItemView.notificationFont(font: self.notificationLabelFont)
             barItemView.delegate = self
+            
             if let shadow = self.shadow {
                 barItemView.shadow(opacity: shadow.1, radius: shadow.0, offset: shadow.2, color: shadow.3)
             }

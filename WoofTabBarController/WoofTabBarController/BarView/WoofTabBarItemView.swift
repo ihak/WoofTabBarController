@@ -28,6 +28,17 @@ public class WoofTabBarItemView: UIView {
     // Notification bubble textlabel.
     private var notificationBubbleLabel = UILabel()
     
+    // Image size
+    private var imageSize = CGSize(width: 40.0, height: 40.0)
+    
+    // Bottom label font
+    private var labelFont = UIFont.systemFont(ofSize: 13)
+    
+    // Notification label font
+    private var notificationFont = UIFont.boldSystemFont(ofSize: 9)
+    
+    private var notificationBubbleOffset = CGSize(width: -10.0, height: 0.0)
+    
     // Background color of the back circle.
     var circleBackgroundColor = UIColor.white {
         didSet {
@@ -88,14 +99,14 @@ public class WoofTabBarItemView: UIView {
         imageContainer.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(imageContainer)
         NSLayoutConstraint.activate([
-            imageContainer.heightAnchor.constraint(equalToConstant: 40.0),
-            imageContainer.widthAnchor.constraint(equalToConstant: 40.0),
+            imageContainer.heightAnchor.constraint(equalToConstant: imageSize.height),
+            imageContainer.widthAnchor.constraint(equalToConstant: imageSize.width),
             imageContainer.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             imageContainer.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: -8.0)
         ])
         
-        imageContainer.layer.cornerRadius = 20.0
-        imageContainer.clipsToBounds = true
+//        imageContainer.layer.cornerRadius = (imageSize.width/2.0)
+//        imageContainer.clipsToBounds = true
         imageContainer.backgroundColor = .clear
         
         // Add tap gesture to imageContainer view
@@ -147,7 +158,7 @@ public class WoofTabBarItemView: UIView {
         label.textAlignment = .center
         label.textColor = .black
         label.text = item.title
-        label.font = .systemFont(ofSize: 13)
+        label.font = self.labelFont
         label.adjustsFontSizeToFitWidth = true
         
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -166,13 +177,13 @@ public class WoofTabBarItemView: UIView {
         NSLayoutConstraint.activate([
             notificationBubbleContainer.heightAnchor.constraint(equalToConstant: 20.0),
             notificationBubbleContainer.widthAnchor.constraint(equalToConstant: 20.0),
-            notificationBubbleContainer.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 5.0),
-            notificationBubbleContainer.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -20.0)
+            notificationBubbleContainer.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: self.notificationBubbleOffset.height),
+            notificationBubbleContainer.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: self.notificationBubbleOffset.width)
         ])
                 
         notificationBubbleLabel.textAlignment = .center
         notificationBubbleLabel.textColor = self.notificationTextColor
-        notificationBubbleLabel.font = .boldSystemFont(ofSize: 9)
+        notificationBubbleLabel.font = self.notificationFont
         notificationBubbleLabel.adjustsFontSizeToFitWidth = true
         notificationBubbleLabel.text = item.count
         notificationBubbleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -312,5 +323,21 @@ public class WoofTabBarItemView: UIView {
         backCircleView.layer.shadowOffset = offset
         backCircleView.layer.shadowColor = color.cgColor
         backCircleView.layer.shadowOpacity = Float(opacity)
+    }
+    
+    func imageSize(size: CGSize) {
+        self.imageSize = size
+    }
+    
+    func notificationFont(font: UIFont) {
+        self.notificationFont = font
+    }
+    
+    func labelFont(font: UIFont) {
+        self.labelFont = font
+    }
+    
+    func notificationBubbleOffset(size: CGSize) {
+        self.notificationBubbleOffset = size
     }
 }

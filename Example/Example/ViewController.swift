@@ -21,6 +21,10 @@ class ViewController: WoofTabBarController {
 //            barview.backgroundColor = .green
 //            barview.bezierBackgroundColor = .orange
 //            barview.circleBackgroundColor = .cyan
+//            barview.imageSize = CGSize(width: 30.0, height: 30.0)
+//            barview.labelFont = .boldSystemFont(ofSize: 13.0)
+//            barview.notificationLabelFont = .systemFont(ofSize: 9.0)
+//            barview.notificationBubbleOffset = CGSize(width: -10.0, height: -3.0)
 //            barview.bezieranimationDuration = 0.5
 //            barview.circleAnimationDuration = 1.5
 //            barview.imageTint = .green
@@ -93,7 +97,7 @@ class Tab1Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabB
 
 class Tab2Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabBarControllerDelegate {
     override func viewDidLoad() {
-        self.view.backgroundColor = .random
+        self.view.backgroundColor = .white
         print("\(String(describing: type(of: self)))->\(#function) called ")
     }
     
@@ -114,7 +118,7 @@ class Tab2Controller: UIViewController, WoofTabBarControllerDataSource, WoofTabB
     }
 
     func woofTabBarItem() -> WoofTabBarItem {
-        return WoofTabBarItem(title: "Favorites", image: "heart", selectedImage: "heart-f")
+        return WoofTabBarItem(title: "Favorites", image: "heart", selectedImage: "heart-f", notificationCount: 3)
     }
 }
 
