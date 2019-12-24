@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "WoofTabBarController"
-  spec.version      = "1.0.3"
+  spec.version      = "1.0.4"
   spec.summary      = "A customized tabbed controller build on Swift."
 
   # This description is used to generate tags and improve search results.
@@ -67,7 +67,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "12.2"
 
   #  When using multiple platforms
-  spec.ios.deployment_target = "12.0"
+  spec.ios.deployment_target = "11.4"
   spec.swift_version = "4.2"
 
 

@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05B9A8A340E547D635CAC4887030DBEE /* WoofTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BC2217308B873E5E78DD8798A703CD /* WoofTabBarController.swift */; };
-		26CD6C00FF217697286EF576B5BC89C6 /* WoofTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CC8EBBAD492D81C67EF425A436491A /* WoofTabBarView.swift */; };
-		3A523EE8178A8F62E348757ADA280CEE /* Pods-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7825A90E082A1582EB16256B0E722B3F /* Pods-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4387BB9B5E79F75ED12BDBDBEDF9BAE5 /* WoofTabBarController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0937CC544DE03218228C65A092449A /* WoofTabBarController-dummy.m */; };
-		4B48CB6DB0E1A8650B97331A234A8F79 /* WoofTabBarControllerClass+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88ACD57F852A7FC9B10106CF4C014AC /* WoofTabBarControllerClass+Delegate.swift */; };
-		733C475D8D7713B3E618D59086DBA516 /* WoofTabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D58F4647F88FEA49E91FC968BECD0EA /* WoofTabBarItemView.swift */; };
-		8E74234A4EF10E2BBA927F2E30C91A87 /* WoofTabBarControllerClass+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735E26D916043BC7D5D2B41037993D /* WoofTabBarControllerClass+DataSource.swift */; };
-		94EC5600E73BBE505A72E421EB494331 /* WoofTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99F4E7EC34A1AA2F0D932D1A00A9E /* WoofTabBarItem.swift */; };
-		9A83DA01D9BF6D53B004EE35D79FE69C /* WoofTabBarView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB729741AB5EE01E67734D8DCAADE2 /* WoofTabBarView+Delegate.swift */; };
-		9D2BBDEB86AF114230A9C9C8A67398D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		B4A64D7F28E4F185C46CE2C52FBD9BEE /* WoofTabBarController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E86207F21E2B51FD0747118FCB5994F1 /* WoofTabBarController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BB56BCEC5966E1005F9E82F2F0EF30B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		D1461194C743C03A77CECE201ABEF2BF /* BezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAFFA3819073200B12F1F7D90B576A /* BezierView.swift */; };
-		D7FC99D8F6AA4ECC56D9545B84B87276 /* Pods-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D7C498FA339E02BD53ECB8916CEA8E /* Pods-Example-dummy.m */; };
-		FA534CD9ACE3CD2F03EE09002B8E1E36 /* WoofTabBarItemView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26134BB2A6DC9781440689AB7E54CF2C /* WoofTabBarItemView+Delegate.swift */; };
+		055537F1F5E7CC56D0FA6D8BB71D4B49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		1A9E456FC427A4B093EFD6D2CC5C62BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		26247312C78A10EBC08C0F23FC98241E /* BezierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAFFA3819073200B12F1F7D90B576A /* BezierView.swift */; };
+		3FA8862EC00843428AAB4BD030C93C29 /* WoofTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99F4E7EC34A1AA2F0D932D1A00A9E /* WoofTabBarItem.swift */; };
+		7B49AC3A03A38AF95E6211D3180B96E8 /* WoofTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CC8EBBAD492D81C67EF425A436491A /* WoofTabBarView.swift */; };
+		7C2DE4391E423E77B7C18DB116DBD322 /* WoofTabBarControllerClass+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88ACD57F852A7FC9B10106CF4C014AC /* WoofTabBarControllerClass+Delegate.swift */; };
+		80436234D43E77450A0EE8A4545FF525 /* WoofTabBarController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0937CC544DE03218228C65A092449A /* WoofTabBarController-dummy.m */; };
+		84C6A5B2BC66A568D7D7D467A4E56D7B /* Pods-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D7C498FA339E02BD53ECB8916CEA8E /* Pods-Example-dummy.m */; };
+		85E542D10036DEF9BEE6682DF336D646 /* WoofTabBarControllerClass+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735E26D916043BC7D5D2B41037993D /* WoofTabBarControllerClass+DataSource.swift */; };
+		8829838036B1400F3A92C6158CDE9B74 /* WoofTabBarView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDB729741AB5EE01E67734D8DCAADE2 /* WoofTabBarView+Delegate.swift */; };
+		93337D0C995893AB91401328F3CB90C5 /* WoofTabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D58F4647F88FEA49E91FC968BECD0EA /* WoofTabBarItemView.swift */; };
+		99178EE26008C15D2E7386894CFCE764 /* WoofTabBarController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E86207F21E2B51FD0747118FCB5994F1 /* WoofTabBarController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE33628639923D13819DF7F73F263378 /* Pods-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7825A90E082A1582EB16256B0E722B3F /* Pods-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C814978CAA773B3917D9529718DB7130 /* WoofTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BC2217308B873E5E78DD8798A703CD /* WoofTabBarController.swift */; };
+		D6C48E7059FCD0DE4F437B644446B205 /* WoofTabBarItemView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26134BB2A6DC9781440689AB7E54CF2C /* WoofTabBarItemView+Delegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		04CF39C9D631C264F90A21AE391C0B92 /* PBXContainerItemProxy */ = {
+		6632240D39711D32AFCA1C39F8082EF3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -38,6 +38,7 @@
 		0D58F4647F88FEA49E91FC968BECD0EA /* WoofTabBarItemView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WoofTabBarItemView.swift; sourceTree = "<group>"; };
 		0F0937CC544DE03218228C65A092449A /* WoofTabBarController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WoofTabBarController-dummy.m"; sourceTree = "<group>"; };
 		1751B8BABC8CF235CF8BDF16F5B1AA68 /* WoofTabBarController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WoofTabBarController.xcconfig; sourceTree = "<group>"; };
+		1F667CC0E19EAF34E5A4119E2121F585 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Example.framework; path = "Pods-Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		243410B9535472556EA4BB6DBC133A0D /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		26134BB2A6DC9781440689AB7E54CF2C /* WoofTabBarItemView+Delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "WoofTabBarItemView+Delegate.swift"; sourceTree = "<group>"; };
 		2A0491EC3C19FBFC98EB7AA58EFFDCDF /* WoofTabBarController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WoofTabBarController-prefix.pch"; sourceTree = "<group>"; };
@@ -49,14 +50,13 @@
 		441854E35F81731E63E53DC7E4EEAD9D /* Pods-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4ADAFFA3819073200B12F1F7D90B576A /* BezierView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BezierView.swift; sourceTree = "<group>"; };
 		4E8524B99724055C1AA796DAA005403C /* WoofTabBarController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WoofTabBarController-Info.plist"; sourceTree = "<group>"; };
-		4E9DEADC836AC8CC02BCDAA52260ACBA /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Example.framework; path = "Pods-Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D99F4E7EC34A1AA2F0D932D1A00A9E /* WoofTabBarItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WoofTabBarItem.swift; sourceTree = "<group>"; };
 		5418A9209774B3FA8097554C14AD8241 /* WoofTabBarController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WoofTabBarController.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6DDB729741AB5EE01E67734D8DCAADE2 /* WoofTabBarView+Delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "WoofTabBarView+Delegate.swift"; sourceTree = "<group>"; };
 		713567284A6FFACE0571CE3814D20AC4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		7825A90E082A1582EB16256B0E722B3F /* Pods-Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example-umbrella.h"; sourceTree = "<group>"; };
 		901EE4D4887B23BFF8CCD5F630AD89D2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		9D5B6EE826697563EEF24BC517C5D3E1 /* WoofTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WoofTabBarController.framework; path = WoofTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A9AB550AF837CC02FA69F5FD6D61A12 /* WoofTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WoofTabBarController.framework; path = WoofTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A88ACD57F852A7FC9B10106CF4C014AC /* WoofTabBarControllerClass+Delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "WoofTabBarControllerClass+Delegate.swift"; sourceTree = "<group>"; };
 		AFECBC24E09D0D25F822C27BD944AFD4 /* Pods-Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -69,19 +69,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		140EA9ED6C1D63AE051F28367CFBC269 /* Frameworks */ = {
+		38C76C2C92FF814AEA198E990E0B6A30 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB56BCEC5966E1005F9E82F2F0EF30B3 /* Foundation.framework in Frameworks */,
+				1A9E456FC427A4B093EFD6D2CC5C62BB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2C7D2F66F07DCE1241847FDFF10142AB /* Frameworks */ = {
+		D2FBDF079B4D66CE71EC5B22C8B6A52E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D2BBDEB86AF114230A9C9C8A67398D7 /* Foundation.framework in Frameworks */,
+				055537F1F5E7CC56D0FA6D8BB71D4B49 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,8 +103,8 @@
 		60E1C89CEA9024264BCED5A774E7318A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4E9DEADC836AC8CC02BCDAA52260ACBA /* Pods_Example.framework */,
-				9D5B6EE826697563EEF24BC517C5D3E1 /* WoofTabBarController.framework */,
+				1F667CC0E19EAF34E5A4119E2121F585 /* Pods_Example.framework */,
+				9A9AB550AF837CC02FA69F5FD6D61A12 /* WoofTabBarController.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,19 +221,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		5C053C5877E8B5B81867D08A7289D98B /* Headers */ = {
+		00613F0EC0E40E568683FA68CFC892FB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A523EE8178A8F62E348757ADA280CEE /* Pods-Example-umbrella.h in Headers */,
+				AE33628639923D13819DF7F73F263378 /* Pods-Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A8F2D4720C33BEA8385B50FCA08D3E67 /* Headers */ = {
+		3665FCC0F36DCCC8156C0738E250BB20 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4A64D7F28E4F185C46CE2C52FBD9BEE /* WoofTabBarController-umbrella.h in Headers */,
+				99178EE26008C15D2E7386894CFCE764 /* WoofTabBarController-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,12 +242,12 @@
 /* Begin PBXNativeTarget section */
 		08DABD9F6F4A7D2CBABEEFC910818AD4 /* WoofTabBarController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58AFC4547FACB0C2A396E9ECB2CD43CB /* Build configuration list for PBXNativeTarget "WoofTabBarController" */;
+			buildConfigurationList = 80EC85D2DDF06217D98632CD618C3D93 /* Build configuration list for PBXNativeTarget "WoofTabBarController" */;
 			buildPhases = (
-				A8F2D4720C33BEA8385B50FCA08D3E67 /* Headers */,
-				0FB70EFAA1720887938DE05298802F74 /* Sources */,
-				2C7D2F66F07DCE1241847FDFF10142AB /* Frameworks */,
-				33D61CF86131E9603A62DBC00F17B91D /* Resources */,
+				3665FCC0F36DCCC8156C0738E250BB20 /* Headers */,
+				CD6884FD79EDD7B526CDB2444D9ED376 /* Sources */,
+				D2FBDF079B4D66CE71EC5B22C8B6A52E /* Frameworks */,
+				6B81C3EFB8470AAD877AD1A96F386860 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -255,26 +255,26 @@
 			);
 			name = WoofTabBarController;
 			productName = WoofTabBarController;
-			productReference = 9D5B6EE826697563EEF24BC517C5D3E1 /* WoofTabBarController.framework */;
+			productReference = 9A9AB550AF837CC02FA69F5FD6D61A12 /* WoofTabBarController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		0AEE99A309977BD12A049FF48AF9BA4B /* Pods-Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 668C22F36D6E2BBFCB0B6CC885E3B21A /* Build configuration list for PBXNativeTarget "Pods-Example" */;
+			buildConfigurationList = B11C54884F1575241582EFB5EB732D79 /* Build configuration list for PBXNativeTarget "Pods-Example" */;
 			buildPhases = (
-				5C053C5877E8B5B81867D08A7289D98B /* Headers */,
-				183342EC427801976D2926B3BFFB9CBB /* Sources */,
-				140EA9ED6C1D63AE051F28367CFBC269 /* Frameworks */,
-				279C0ECD3D538BD0571CAACEF78BBB85 /* Resources */,
+				00613F0EC0E40E568683FA68CFC892FB /* Headers */,
+				F81A9F92D4425A00430B6E84F3FA4F28 /* Sources */,
+				38C76C2C92FF814AEA198E990E0B6A30 /* Frameworks */,
+				3D1AE7EF27658F715A447CA2227B9F7D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C438356D1E71EC422D0821A02142C675 /* PBXTargetDependency */,
+				5D516448041C04031D74F16C0F038108 /* PBXTargetDependency */,
 			);
 			name = "Pods-Example";
 			productName = "Pods-Example";
-			productReference = 4E9DEADC836AC8CC02BCDAA52260ACBA /* Pods_Example.framework */;
+			productReference = 1F667CC0E19EAF34E5A4119E2121F585 /* Pods_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -283,8 +283,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -292,6 +292,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 60E1C89CEA9024264BCED5A774E7318A /* Products */;
@@ -305,14 +306,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		279C0ECD3D538BD0571CAACEF78BBB85 /* Resources */ = {
+		3D1AE7EF27658F715A447CA2227B9F7D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		33D61CF86131E9603A62DBC00F17B91D /* Resources */ = {
+		6B81C3EFB8470AAD877AD1A96F386860 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -322,43 +323,119 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0FB70EFAA1720887938DE05298802F74 /* Sources */ = {
+		CD6884FD79EDD7B526CDB2444D9ED376 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1461194C743C03A77CECE201ABEF2BF /* BezierView.swift in Sources */,
-				4387BB9B5E79F75ED12BDBDBEDF9BAE5 /* WoofTabBarController-dummy.m in Sources */,
-				05B9A8A340E547D635CAC4887030DBEE /* WoofTabBarController.swift in Sources */,
-				8E74234A4EF10E2BBA927F2E30C91A87 /* WoofTabBarControllerClass+DataSource.swift in Sources */,
-				4B48CB6DB0E1A8650B97331A234A8F79 /* WoofTabBarControllerClass+Delegate.swift in Sources */,
-				94EC5600E73BBE505A72E421EB494331 /* WoofTabBarItem.swift in Sources */,
-				FA534CD9ACE3CD2F03EE09002B8E1E36 /* WoofTabBarItemView+Delegate.swift in Sources */,
-				733C475D8D7713B3E618D59086DBA516 /* WoofTabBarItemView.swift in Sources */,
-				9A83DA01D9BF6D53B004EE35D79FE69C /* WoofTabBarView+Delegate.swift in Sources */,
-				26CD6C00FF217697286EF576B5BC89C6 /* WoofTabBarView.swift in Sources */,
+				26247312C78A10EBC08C0F23FC98241E /* BezierView.swift in Sources */,
+				80436234D43E77450A0EE8A4545FF525 /* WoofTabBarController-dummy.m in Sources */,
+				C814978CAA773B3917D9529718DB7130 /* WoofTabBarController.swift in Sources */,
+				85E542D10036DEF9BEE6682DF336D646 /* WoofTabBarControllerClass+DataSource.swift in Sources */,
+				7C2DE4391E423E77B7C18DB116DBD322 /* WoofTabBarControllerClass+Delegate.swift in Sources */,
+				3FA8862EC00843428AAB4BD030C93C29 /* WoofTabBarItem.swift in Sources */,
+				D6C48E7059FCD0DE4F437B644446B205 /* WoofTabBarItemView+Delegate.swift in Sources */,
+				93337D0C995893AB91401328F3CB90C5 /* WoofTabBarItemView.swift in Sources */,
+				8829838036B1400F3A92C6158CDE9B74 /* WoofTabBarView+Delegate.swift in Sources */,
+				7B49AC3A03A38AF95E6211D3180B96E8 /* WoofTabBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		183342EC427801976D2926B3BFFB9CBB /* Sources */ = {
+		F81A9F92D4425A00430B6E84F3FA4F28 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7FC99D8F6AA4ECC56D9545B84B87276 /* Pods-Example-dummy.m in Sources */,
+				84C6A5B2BC66A568D7D7D467A4E56D7B /* Pods-Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C438356D1E71EC422D0821A02142C675 /* PBXTargetDependency */ = {
+		5D516448041C04031D74F16C0F038108 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = WoofTabBarController;
 			target = 08DABD9F6F4A7D2CBABEEFC910818AD4 /* WoofTabBarController */;
-			targetProxy = 04CF39C9D631C264F90A21AE391C0B92 /* PBXContainerItemProxy */;
+			targetProxy = 6632240D39711D32AFCA1C39F8082EF3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0C99D3B4CDD18E5477D392F59E355DB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1751B8BABC8CF235CF8BDF16F5B1AA68 /* WoofTabBarController.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WoofTabBarController/WoofTabBarController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WoofTabBarController/WoofTabBarController-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/WoofTabBarController/WoofTabBarController.modulemap";
+				PRODUCT_MODULE_NAME = WoofTabBarController;
+				PRODUCT_NAME = WoofTabBarController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2C9A71DB94DC84ABDCEA54D73E6FDAEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 243410B9535472556EA4BB6DBC133A0D /* Pods-Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Example/Pods-Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Example/Pods-Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		510B057D2E9F059C50D52DA5D90F3ACF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -416,43 +493,6 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		5EDE86B61F39585515FE71778392EDFF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1751B8BABC8CF235CF8BDF16F5B1AA68 /* WoofTabBarController.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/WoofTabBarController/WoofTabBarController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/WoofTabBarController/WoofTabBarController-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/WoofTabBarController/WoofTabBarController.modulemap";
-				PRODUCT_MODULE_NAME = WoofTabBarController;
-				PRODUCT_NAME = WoofTabBarController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -520,7 +560,7 @@
 			};
 			name = Debug;
 		};
-		B4340D2DF9B0957DB83C13633F099C0B /* Debug */ = {
+		B0C23FA4CC0AE155B44E7735DA1FC2D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B45138496B85A072654D1D0F8EBBEDE5 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
@@ -558,7 +598,7 @@
 			};
 			name = Debug;
 		};
-		B551D3F80C1F23DC223339C25EACAF4D /* Debug */ = {
+		E13795C65C6989A5E103E83DCE8C863C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1751B8BABC8CF235CF8BDF16F5B1AA68 /* WoofTabBarController.xcconfig */;
 			buildSettings = {
@@ -575,7 +615,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/WoofTabBarController/WoofTabBarController-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/WoofTabBarController/WoofTabBarController-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,45 +634,6 @@
 			};
 			name = Debug;
 		};
-		EB2E1EC2C1383000A45B79A961C08A50 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 243410B9535472556EA4BB6DBC133A0D /* Pods-Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Example/Pods-Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Example/Pods-Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -645,20 +646,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58AFC4547FACB0C2A396E9ECB2CD43CB /* Build configuration list for PBXNativeTarget "WoofTabBarController" */ = {
+		80EC85D2DDF06217D98632CD618C3D93 /* Build configuration list for PBXNativeTarget "WoofTabBarController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B551D3F80C1F23DC223339C25EACAF4D /* Debug */,
-				5EDE86B61F39585515FE71778392EDFF /* Release */,
+				E13795C65C6989A5E103E83DCE8C863C /* Debug */,
+				0C99D3B4CDD18E5477D392F59E355DB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		668C22F36D6E2BBFCB0B6CC885E3B21A /* Build configuration list for PBXNativeTarget "Pods-Example" */ = {
+		B11C54884F1575241582EFB5EB732D79 /* Build configuration list for PBXNativeTarget "Pods-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B4340D2DF9B0957DB83C13633F099C0B /* Debug */,
-				EB2E1EC2C1383000A45B79A961C08A50 /* Release */,
+				B0C23FA4CC0AE155B44E7735DA1FC2D8 /* Debug */,
+				2C9A71DB94DC84ABDCEA54D73E6FDAEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
